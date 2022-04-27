@@ -112,7 +112,7 @@
             ]
         },
         {
-            "abilityName": "Decisional Autonomy",
+            "abilityName": "Autonomy",
             "abilityDescription": "The ability of the system to act autonomously. Nearly all systems have a degree of autonomy. It ranges from a simple autonomous task (e.g., when it reacts to sensors reading) to the ability to be self-sufficient in a complex environment.",
             "hasSubAbilities": false,
             "abilityLevels": [
