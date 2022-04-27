@@ -287,7 +287,7 @@ async function pdf() {
                 html += "<p>" + data[i].subAbilities[j].subAbilityDescription + "</p><br>";
 
                 // Levels
-                html += "<table> <tr><th>Level</th><th>Achieved?</th><th>Scenario</th></tr>"
+                html += "<table style='border: 1px solid black;'> <tr><th>Level</th><th>Achieved?</th><th>Scenario</th></tr>"
 
                 for (let index = 0; index < data[i].subAbilities[j].subAbilityLevels.length; ++index) {
                     const element = data[i].subAbilities[j].subAbilityLevels[index];        
@@ -307,7 +307,7 @@ async function pdf() {
             html += "<p>" + data[i].abilityDescription + "</p><br>";
 
             // Levels
-            html += "<table> <tr><th>Level</th><th>Achieved?</th><th>Scenario</th></tr>"
+            html += "<table style='border: 1px solid black;'> <tr><th>Level</th><th>Achieved?</th><th>Scenario</th></tr>"
 
             for (let index = 0; index < data[i].abilityLevels.length; ++index) {
                 const element = data[i].abilityLevels[index];        
@@ -319,7 +319,7 @@ async function pdf() {
             html += "</table><br><hr>"
         }
     }
-    html += "</body><html>"
+    html += "<div id='AdvisorTable'></div></body><html>"
 
     const w = window.open('','newpage');
     w.document.write(html);
@@ -336,21 +336,25 @@ async function getJSONAbilities() {
 
 
 async function table() {
+    tableCompose(document, "AdvisorTable")
+}
+
+async function tableCompose(doc, divName) {
     // Start creating the table
-    let table = document.createElement('table');
-    let tbody = document.createElement('tbody');
+    let table = doc.createElement('table');
+    let tbody = doc.createElement('tbody');
     table.appendChild(tbody);
-    document.getElementById("AdvisorTable").innerHTML = "";
-    document.getElementById("AdvisorTable").appendChild(table);
+    doc.getElementById(divName).innerHTML = "";
+    doc.getElementById(divName).appendChild(table);
 
     // Get data and iterate over them
     var data = await getJSONAbilities();
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Header for the ability when sub abilities are available
-            let abilityRow = document.createElement('tr');
-            let heading_1 = document.createElement('td');
-            let heading_2 = document.createElement('td');
+            let abilityRow = doc.createElement('tr');
+            let heading_1 = doc.createElement('td');
+            let heading_2 = doc.createElement('td');
 
             heading_1.innerHTML = "<b>" + data[i].abilityName + "</b>";
             heading_2.innerHTML = "";
@@ -369,9 +373,9 @@ async function table() {
             }
         } else {
             // Header for the ability when no sub abilities are available
-            let abilityRow = document.createElement('tr');
-            let heading_1 = document.createElement('td');
-            let heading_2 = document.createElement('td');
+            let abilityRow = doc.createElement('tr');
+            let heading_1 = doc.createElement('td');
+            let heading_2 = doc.createElement('td');
 
             heading_1.innerHTML = "<b>" + data[i].abilityName + "</b>";
             heading_2.innerHTML = "";
