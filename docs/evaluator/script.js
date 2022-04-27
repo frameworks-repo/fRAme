@@ -171,19 +171,19 @@ function drawCircles(ctx, label, levels, alpha){
     const length = 300
     var step = length/levels.length;
     const radius = 10;
-    var X = canvas.width / 2; // cosa è canvas??
+    var X = canvas.width / 2; 
     var Y = canvas.height / 2;   
-    // draw the line
+    // Draw the line
     ctx.beginPath();
     ctx.moveTo(X, Y);
     ctx.lineTo(X+length*Math.cos(alpha),Y+length*Math.sin(alpha));
     ctx.strokeStyle = 'gray';
     ctx.lineWidth = 5;
     ctx.stroke();
-    // write the label
+    // Write the label
     ctx.font = "10px Arial";
     ctx.fillText(label, X+length*Math.cos(alpha) + 15 ,Y+length*Math.sin(alpha) + 15); 
-    // draw the circles
+    // Draw the circles
     for (let index = 0; index < levels.length; ++index) {
         const element = levels[index];
         var value = document.getElementById(element).value;
@@ -193,7 +193,7 @@ function drawCircles(ctx, label, levels, alpha){
         ctx.lineWidth = 3;
         ctx.fillStyle = colors[value];
         ctx.fill();
-        // set the color
+        // Set the color
         ctx.strokeStyle = colors[value];
         ctx.stroke();
     }
@@ -225,11 +225,9 @@ function pdf() {
     var abilities = []
     const elements =  document.getElementsByClassName('tabcontent');
     for(var i=0; i<elements.length; i++) abilities.push("<h2>" + elements[i].id + "</h2>" + elements[i].innerHTML + "<hr>");
-    //console.log(abilities);
     var html = abilities.join()
     const w = window.open('','newpage')
     w.document.write(html)
-    //w.document.write(document.getElementById("canvas").)
     w.document.close()
     w.print();
 }
