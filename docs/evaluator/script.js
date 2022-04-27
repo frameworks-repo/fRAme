@@ -63,45 +63,78 @@ function fillRow(tbody, abilityLevel){
 }
 
 function fillTable(ability) {
-
-    let table = document.createElement('table');
-    let thead = document.createElement('thead');
-    let tbody = document.createElement('tbody');
-    let tDescription = document.createElement('p');
-    table.appendChild(thead);
-    table.appendChild(tbody);
-
-    // Initial description for the ability
-    tDescription.innerHTML = ability.abilityDescription;
-    document.getElementById(ability.abilityName).appendChild(tDescription);
-
-    // Adding the entire table to the body tag
-    document.getElementById(ability.abilityName).appendChild(table);
-
-    // Creating and adding data to first row of the table
-    let row_1 = document.createElement('tr');
-    let heading_1 = document.createElement('th');
-    heading_1.innerHTML = "Level";
-    let heading_2 = document.createElement('th');
-    heading_2.innerHTML = "Achieved?";
-    let heading_3 = document.createElement('th');
-    heading_3.innerHTML = "Scenario";
-    row_1.appendChild(heading_1);
-    row_1.appendChild(heading_2);
-    row_1.appendChild(heading_3);
-    thead.appendChild(row_1);
-
-    // Create a row for every level
+    
     if (!ability.hasSubAbilities) {
+        let table = document.createElement('table');
+        let thead = document.createElement('thead');
+        let tbody = document.createElement('tbody');
+        let tDescription = document.createElement('p');
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        // Initial description for the ability
+        tDescription.innerHTML = ability.abilityDescription;
+        document.getElementById(ability.abilityName).appendChild(tDescription);
+
+        // Adding the entire table to the body tag
+        document.getElementById(ability.abilityName).appendChild(table);
+
+        // Creating and adding data to first row of the table
+        let row_1 = document.createElement('tr');
+        let heading_1 = document.createElement('th');
+        heading_1.innerHTML = "Level";
+        let heading_2 = document.createElement('th');
+        heading_2.innerHTML = "Achieved?";
+        let heading_3 = document.createElement('th');
+        heading_3.innerHTML = "Scenario";
+        row_1.appendChild(heading_1);
+        row_1.appendChild(heading_2);
+        row_1.appendChild(heading_3);
+        thead.appendChild(row_1);
+
+        // Create a row for every level
         for (let i=0; i<ability.abilityLevels.length; i++) {
             fillRow(tbody, ability.abilityLevels[i]);
         }
     } else {
-        // TODO: Add handling of abilities with subabilities
-        for (let i=0; i<ability.subAbilities.length; i++) {
+        let tDescription = document.createElement('p');
 
+        // Initial description for the ability
+        tDescription.innerHTML = ability.abilityDescription;
+        document.getElementById(ability.abilityName).appendChild(tDescription);
+
+        // For each sub-ability
+        for (let i=0; i<ability.subAbilities.length; i++) {
+            let subAbilityName = document.createElement('p');
+            subAbilityName.innerHTML = "<b>" + ability.subAbilities[i].subAbilityName + "</b>: " + ability.subAbilities[i].subAbilityDescription;
+            document.getElementById(ability.abilityName).appendChild(subAbilityName);
+
+            let table = document.createElement('table');
+            let thead = document.createElement('thead');
+            let tbody = document.createElement('tbody');
+            table.appendChild(thead);
+            table.appendChild(tbody);
+
+            // Compose the table for the sub-ability
+            let row_1 = document.createElement('tr');
+            let heading_1 = document.createElement('th');
+            heading_1.innerHTML = "Level";
+            let heading_2 = document.createElement('th');
+            heading_2.innerHTML = "Achieved?";
+            let heading_3 = document.createElement('th');
+            heading_3.innerHTML = "Scenario";
+            row_1.appendChild(heading_1);
+            row_1.appendChild(heading_2);
+            row_1.appendChild(heading_3);
+            thead.appendChild(row_1);
+
+            for (let j=0; j<ability.subAbilities[i].subAbilityLevels.length; j++) {
+                fillRow(tbody, ability.subAbilities[i].subAbilityLevels[j]);
+            }
+
+            // Adding the entire table to the body tag
+            document.getElementById(ability.abilityName).appendChild(table);
         }
-        
     }
 }
 
