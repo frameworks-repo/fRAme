@@ -305,6 +305,10 @@ async function table() {
 
             heading_1.innerHTML = "<b>" + data[i].abilityName + "</b>";
             heading_2.innerHTML = "";
+            heading_1.style.paddingTop = "10px";
+            heading_2.style.paddingTop = "10px";
+            heading_1.style.borderBottom = "1px solid black";
+            heading_2.style.borderBottom = "1px solid black";
             
             abilityRow.appendChild(heading_1);
             abilityRow.appendChild(heading_2);
@@ -322,6 +326,10 @@ async function table() {
 
             heading_1.innerHTML = "<b>" + data[i].abilityName + "</b>";
             heading_2.innerHTML = "";
+            heading_1.style.paddingTop = "10px";
+            heading_2.style.paddingTop = "10px";
+            heading_1.style.borderBottom = "1px solid black";
+            heading_2.style.borderBottom = "1px solid black";
             
             abilityRow.appendChild(heading_1);
             abilityRow.appendChild(heading_2);
@@ -341,6 +349,7 @@ function populateLevels(ability, tbody) {
 
     text1.innerHTML = "";
     text2.innerHTML = "";
+    text2.style.paddingLeft = "5px";
 
     for (let index = 0; index < ability.abilityLevels.length; ++index) {
         const element = ability.abilityLevels[index];        
@@ -361,6 +370,7 @@ function populateLevelsSubAbilities(subAbility, tbody) {
 
     text1.innerHTML = subAbility.subAbilityName;
     text2.innerHTML = "";
+    text2.style.paddingLeft = "5px";
 
     for (let index = 0; index < subAbility.subAbilityLevels.length; ++index) {
         const element = subAbility.subAbilityLevels[index];        
