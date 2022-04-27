@@ -1,6 +1,6 @@
 //options to be added
 var options = ["Not valid","Satisfied","Improvable (low effort)","Improvable (high effort)", "Does not apply"];
-var colors = ['#000000', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
+var colors = ['#FFFFFF', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
 
 var Configurability = ["Static Configuration", "Start-up Configuration", "Run-time Configuration","Run-time Self Configuration","Autonomous Configuration"];
 var Adaptability = ["No Adaptation","Recognition of the need for adaptation", "Adaptation of individual components/parameters/tasks", "Process chain adaptation / Multiple parameters adaptation", "Communicated component/parameter adaptation"];
@@ -13,7 +13,7 @@ var Interaction = [
 ];
 
 const descriptions = new Map();
-descriptions.set("No Adaptation", "The system does not alter its operating behavior in response to experience gained over time."); 
+descriptions.set("Adaptability - No Adaptation", "The system does not alter its operating behavior in response to experience gained over time."); 
 
 
 function openAbility(evt, cityName) {
@@ -54,12 +54,12 @@ function fillOptions(cell, element){
     }
 }
 // el: the element to be added
-function fillRow(el, tbody){
+function fillRow(el, tbody, abilityName){
     let row = document.createElement('tr');
     // first row the element
     let cell_1 = document.createElement('td');
     // add the description
-    cell_1.innerHTML = "<details> <summary>"+ el + "</summary>" + descriptions.get(el) + "</details>";
+    cell_1.innerHTML = "<details> <summary>"+ el + "</summary>" + descriptions.get(abilityName + " - " + el) + "</details>";
     // options levels
     let cell_2 = document.createElement('td');
     fillOptions(cell_2, el);
@@ -100,7 +100,7 @@ function fillTable(capability, levels) {
     row_1.appendChild(heading_3);
     thead.appendChild(row_1);
     // create a row for every level
-    levels.forEach(element => fillRow(element,tbody));
+    levels.forEach(element => fillRow(element,tbody, capability));
 }
 
 function fillTables(){
