@@ -1,4 +1,4 @@
-export var data = [
+[
     {
         "abilityName": "Configurability",
         "abilityDescription": "The ability of the system to be configured to perform a task or reconfigured to perform different tasks. This may range from the ability to re-program the system to be able to alter the physical structure of the system (e.g. by changing a tool).",
