@@ -3,11 +3,6 @@ var options = ["Not valid","Satisfied","Improvable (low effort)","Improvable (hi
 var colors = ['#FFFFFF', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
 
 
-
-const descriptions = new Map();
-descriptions.set("Adaptability - No Adaptation", "The system does not alter its operating behavior in response to experience gained over time."); 
-
-
 function openAbility(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -102,6 +97,9 @@ function fillTable(ability) {
         }
     } else {
         // TODO: Add handling of abilities with subabilities
+        for (let i=0; i<ability.subAbilities.length; i++) {
+
+        }
         
     }
 }
