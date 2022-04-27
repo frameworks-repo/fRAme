@@ -544,6 +544,334 @@
                     ]
                 }
             ]
+        },
+        {
+            "abilityName": "Cognitive",
+            "abilityDescription": "The ability to interpret the task and environment such that tasks can be effectively and efficiently executed even where there exists environmental and/or task uncertainty. The ability to interpret human commands delivered in natural language or gestures. The ability to interpret the function and interrelationships between different objects in the environment and understand how to use or manipulate them. The ability to plan and execute tasks in response to high-level commands. The ability to work interactively with people as if like a person. Currently, different aspects and faculties of the Cognitive Ability as a whole have different degrees of maturity and pose different challenges.Attempting to combine these differences into a single rating or overarching target is likely to lead to invalid or misleading conclusions. The assessment of cognitive ability is therefore divided into several components or faculties. The assumption is that the cognitive ability of a system can be assembled and described more accurately by referring to a mixture of component abilities.",
+            "hasSubAbilities": true,
+            "subAbilities": [
+                {
+                    "subAbilityName": "Action",
+                    "subAbilityDescription": "It concerns the ability of the system to act purposefully within its environment and the degree to which it is able to carry out actions and plan those actions. These abilities build on perception and decisional autonomy abilities. Action ability also co-depends on the other cognitive abilities.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No Action Ability",
+                            "levelDescription": "Systems are defined by having some level of action on the environment. This level remains for compatibility."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Defined action",
+                            "levelDescription": "The system executes fully pre-defined actions as a sequence of sub-actions. This sequence can repeat until stopped by an operator or other system event."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Decision based action",
+                            "levelDescription": "The system is able to alter its course of action based on perceptions or system events. It is able to select between a set of pre-defined actions based on its decisional autonomy ability."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Sense driven action",
+                            "levelDescription": "The system is able to modulate its action in proportion to parameters derived from its perceptions. The perceptions are used to drive the selection of pre-defined actions or the parameters of pre-defined actions."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Optimized action",
+                            "levelDescription": "The system is able to alter the sub-task sequence it applies to the execution of a task in response to perceptions or a need to optimize a defined task parameter."
+                        },
+                        {
+                            "level": 5,
+                            "levelName": "Knowledge driven action",
+                            "levelDescription": "The system is able to utilize knowledge gained from perceptions of the environment including objects within it, to inform actions or sequences of action. Knowledge is gained either by accumulation over time or through the embedding of knowledge from external sources, including user inputs that associate properties with perceptions."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Plan driven action",
+                            "levelDescription": "The system is able to use accumulated information about tasks to inform its plans for action."
+                        },
+                        {
+                            "level": 7,
+                            "levelName": "Dynamic planning",
+                            "levelDescription": "The system is able to monitor its actions and alter its plans in response to its assessment of success."
+                        },
+                        {
+                            "level": 8,
+                            "levelName": "Task action suggestions",
+                            "levelDescription": "The system is able to suggest tasks that contribute to the goals of a specific mission."
+                        },
+                        {
+                            "level": 9,
+                            "levelName": "Mission proposals",
+                            "levelDescription": "The system is able to propose missions that align with high-level objectives."
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Intepretive",
+                    "subAbilityDescription": "The interpretation of sense data is key to the ability to identify, recognise, classify and parameterize objects in the environment. It particularly refers to the ability to amalgamate multi-modal data into unified high-level object descriptions that create knowledge for tasks to draw on. The ability to interpret also engages knowledge sources to build increasingly complex interpretations of the environment and human interaction, in particular building frameworks of relationships between the environment and objects and between objects.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No interpretive Ability",
+                            "levelDescription": "The system does not need to interpret the environment or user interface actions."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Fixed sensory interpretation",
+                            "levelDescription": "The system has a fixed interpretation of the perceptions that occur because they are pre-categorized."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Basic environment interpretation",
+                            "levelDescription": "The system uses sensor data to interpret the environment into fixed notions of environmental data that are pre-categorized."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Object delineation",
+                            "levelDescription": "The system is able to disambiguate objects from an interpretation of its static environment. The disambiguation of objects is based on built-in notions of objects and the environment. These notions may only be valid within a narrow operating context."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Object category interpretation",
+                            "levelDescription": "The system is able to interpret the shapes and forms of objects based on categories of objects that are task-relevant. It is able to interpret sense data to identify coherent instances of an object over a time scale appropriate to the task.  Note that this ability level is particularly affected by the Cognition Ability Parameters."
+                        },
+                        {
+                            "level": 5,
+                            "levelName": "Structural interpretation",
+                            "levelDescription": "The system is able to interpret perceptions so as to extract structural information from the environment. It is able to identify the structural relationships between objects in the environment."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Basic semantic interpretation",
+                            "levelDescription": "The system is able to apply semantic tags to locations and objects allowing it to plan actions based on functional objectives that depend on the semantics of objects and locations."
+                        },
+                        {
+                            "level": 7,
+                            "levelName": "Property interpretation",
+                            "levelDescription": "The system is able to interpret perceptions to determine the properties of objects or locations in the environment."
+                        },
+                        {
+                            "level": 8,
+                            "levelName": "Novelty interpretation",
+                            "levelDescription": "The system is able to interpret perceptions to identify novelty in objects or locations."
+                        },
+                        {
+                            "level": 9,
+                            "levelName": "Environmental affordance",
+                            "levelDescription": "The system is able to interpret the environment in terms of what it affords."
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Envisioning",
+                    "subAbilityDescription": "Envisioning refers to the ability of the system to assess the impact of actions in the future. This may reduce to prediction but in the higher levels involves an assessment of the impact of observed external events.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No envisioning ability",
+                            "levelDescription": "The system is not able to predict subsequent states."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Function projection",
+                            "levelDescription": "The system is able to project the effect of its function onto the local environment in order to be able to assess its effectiveness."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Basic environment envisioning",
+                            "levelDescription": "The system is able to observe events in the environment that relate to the task and envision their impact on the actions of the system itself."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Envisioning safety",
+                            "levelDescription": "The system is able to assess the safety implications on users of observed events occurring in the working environment."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Envisioning user responses",
+                            "levelDescription": "The system is able to envision the actions of a user responding to events in the environment."
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Acquired knowledge",
+                    "subAbilityDescription": "Operating environments will always contain a number of unknowns. In many proposed application areas systems will encounter unknown situations as a normal part of task execution. The acquisition of knowledge about the new situations is fundamental to the success of these new application areas.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No Acquired Knowledge",
+                            "levelDescription": "The system does not acquire knowledge during its operation. Required knowledge is embedded in the system."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Sense data and property knowledge",
+                            "levelDescription": "The system is able to acquire knowledge about its environment and properties of objects in the environment based on sense data gathered moment to moment."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Persistent sense data knowledge",
+                            "levelDescription": "The system is able to accumulate knowledge about its environment based on sense data that persists during the execution of the current task."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Deliberate acquisition",
+                            "levelDescription": "The system is able to acquire knowledge about the composition of its operating environment by executing actions that are deliberately designed to increase knowledge through exploration."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Place knowledge",
+                            "levelDescription": "The system is able to accumulate knowledge about the location and types of objects and environmental features in terms of matching objects to pre-defined and known types."
+                        }, 
+                        {
+                            "level": 5,
+                            "levelName": "Knowledge scaffolding",
+                            "levelDescription": "The system has the ability to integrate embedded knowledge of objects and places with related knowledge gained from the environment."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Requested knowledge",
+                            "levelDescription": "The system is able to recognise that it has insufficient knowledge about an object or place relevant to the task and can formulate a question to gain that knowledge either from a person, or an external data source such as the internet or another system."
+                        },
+                        {
+                            "level": 7,
+                            "levelName": "Distributed knowledge",
+                            "levelDescription": "The system is able to communicate its gained knowledge to other systems and can receive and integrate knowledge from other systems."
+                        },
+                        {
+                            "level": 8,
+                            "levelName": "Interaction acquisition",
+                            "levelDescription": "The system is able to acquire knowledge about its environment and objects within it through planned interactions with the environment and objects."
+                        },
+                        {
+                            "level": 9,
+                            "levelName": "Object function",
+                            "levelDescription": "The system is able to acquire knowledge about the function of objects in the environment. This knowledge may be acquired directly or indirectly through observation."
+                        }, 
+                        {
+                            "level": 10,
+                            "levelName": "User knowledge",
+                            "levelDescription": "The system is able to acquire knowledge about the user by observation."
+                        },
+                        {
+                            "level": 11,
+                            "levelName": "Critical feedback",
+                            "levelDescription": "The system is able to acquire knowledge about its actions by analysis of critical feedback that follows completion of the action."
+                        },
+                        {
+                            "level": 12,
+                            "levelName": "Long term observation",
+                            "levelDescription": "The system is able to distinguish between long term and short term changes in the environment and the objects within it."
+                        },
+                        {
+                            "level": 13,
+                            "levelName": "Patterns of behaviour",
+                            "levelDescription": "The system is able to acquire knowledge about the patterns of behaviour of the user that relate to the task."
+                        },
+                        {
+                            "level": 14,
+                            "levelName": "Observation learning",
+                            "levelDescription": "The system is able to acquiring knowledge indirectly from observing other systems or people carrying out tasks."
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Reasoning",
+                    "subAbilityDescription": "Reasoning ability is the glue that holds the cognitive structures together. Perception, knowledge acquisition, interpretation and envisioning all rely to a certain extent on the ability to reason from uncertain data. As application tasks become more complex the need to provide task and mission level reasoning increases.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No Reasoning",
+                            "levelDescription": "There are numerous simple systems that do not carry out any form of reasoning but simply execute a pre-determined pattern of activity."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Reasoning from sense data",
+                            "levelDescription": "The system is able to make basic judgements of sense data sufficient to allow actions to be controlled."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Pre-defined reasoning",
+                            "levelDescription": "The system is able to use basic predefined knowledge about structures and objects in the environment to guide action and interaction."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Basic environment reasoning",
+                            "levelDescription": "The system is able to use knowledge of the environment gained from perception in conjunction with stored knowledge to reason about the environment."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Reasoning with conflicts",
+                            "levelDescription": "The system is able to reason about the environment and objects when there is conflicting or incomplete information."
+                        },
+                        {
+                            "level": 5,
+                            "levelName": "Dynamic reasoning",
+                            "levelDescription": "The system is able to reason about the perceived dynamics in the environment."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Safety reasoning",
+                            "levelDescription": "The system is able to reason about safety in the environment."
+                        },
+                        {
+                            "level": 7,
+                            "levelName": "Task reasoning",
+                            "levelDescription": "The system is able to reason about the appropriate courses of action to achieve a task where there are alternative actions that can be undertaken. Typically the system will be able to identify the course of action which matches the desired task parameters, typically these involve time to completion, resource usage, or a desired performance level."
+                        },
+                        {
+                            "level": 8,
+                            "levelName": "Task hypothesis",
+                            "levelDescription": "The system is able to reason about the priorities of different tasks within a mission and propose priorities based on its knowledge of the mission and the tasks. The system will be able to fix on a task that must be achieved but make decisions about how tasks will sequence to achieve mission objectives."
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Human interaction",
+                    "subAbilityDescription": "The following set of levels relate to different levels of human interaction with a system that have a cognitive element. They specifically relate to the interaction between a human and a single system. Where multiple systems are involved a corresponding set of levels applies.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No Cognitive Human Interaction",
+                            "levelDescription": "Many systems will be able to operate successfully without cognitive interaction with the user."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Fixed interaction",
+                            "levelDescription": "Interaction between the user and the system follows a fixed pattern. Typically this takes place via a user interface with well defined inputs and outputs. Fixed interaction also includes interaction via a computer based user interface where interactions directly control the system according to pre-defined sets of commands with specific meaning. The connection between the user and the system may involve a wireless link. Any interpretation of commands is fixed and embedded."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Task context interaction",
+                            "levelDescription": "The system is able to interpret commands from the user that utilise task context semantics within a domain specific communication framework appropriate to the range of the task. The system is able to relay task status to the user using task context semantics suitable for the task."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Object and location interaction",
+                            "levelDescription": "The system is able to interpret user interactions that refer to objects, locations or actions in as is appropriate to the task. This includes the ability to interpret user interactions that identify objects locations and actions as well as processing commands that reference locations, objects and actions relevant to the task. Dialogues are initiated by the user."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "System triggered interaction",
+                            "levelDescription": "The system is able to start a dialogue with the user in a socially appropriate manner relevant to its task or mission. The system has a basic understanding of the social interaction appropriate to the task/mission domain. Interaction may continue throughout the operating cycle for each task as is appropriate to the task/mission."
+                        },
+                        {
+                            "level": 5,
+                            "levelName": "Social interaction",
+                            "levelDescription": "The system is able to maintain dialogues that cover more than one type of social interaction, or domain task. The system is able to manage the interaction provided it remains within the defined context of the task or mission."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Complex social interaction",
+                            "levelDescription": "Dialogues cover multiple social interactions and tasks, where the system is able to instruct the user to carry out tasks, or enter into a negotiation about how a task is specified. The interaction is typified by a bi-directional exchange of commands."
+                        },
+                        {
+                            "level": 7,
+                            "levelName": "Intuitive Interaction",
+                            "levelDescription": "The system is able to intuit the needs of a user with or without explicit command or dialogue. The user may communicate to the system without issuing explicit commands. The system will intuit from the current context and historical information the implied command."
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
