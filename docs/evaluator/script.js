@@ -54,7 +54,7 @@ function fillRow(tbody, abilityLevel){
     
     // Options levels
     let cell_2 = document.createElement('td');
-    fillOptions(cell_2, abilityLevel.levelName);
+    fillOptions(cell_2, abilityLevel + "_" + abilityLevel.levelName);
     
     // Text area for the scenario
     let cell_3 = document.createElement('td');
@@ -200,13 +200,20 @@ function drawCircles(ctx, label, levels, alpha){
 }
 
 
-function draw() {
+async function draw() {
+    // Get the canvas context
     const canvas = document.getElementById("canvas");
-
     if (canvas == null) {
         return;
     }
     const ctx = canvas.getContext('2d');
+
+    // Start drawing data
+    var data = await getJSONAbilities();
+    for (let i=0; i<data.length; i++) {
+        
+    }
+
     drawCircles(ctx,"Configurability", Configurability, 0 );
     drawCircles(ctx,"Dependability", Dependability, 0.5 );
     drawCircles(ctx,"Adaptability", Adaptability, 1.5 );
