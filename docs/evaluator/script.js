@@ -27,12 +27,13 @@ function openAbility(evt, cityName) {
 
 // element: single capability level
 function fillOptions(cell, element){
-    //Create and append select list
+    // Create and append select list
     var selectList = document.createElement("select");
     selectList.id = element;
     selectList.onchange = "draw()";
     cell.appendChild(selectList);
-    //Create and append the options
+    
+    // Create and append the options
     for (var i = 0; i < options.length; i++) {
         var option = document.createElement("option");
         option.value = i;
@@ -41,20 +42,26 @@ function fillOptions(cell, element){
     }
 }
 
+
 // el: the element to be added
 function fillRow(tbody, abilityLevel){
+    // First row the element
     let row = document.createElement('tr');
-    // first row the element
     let cell_1 = document.createElement('td');
-    // add the description
+
+    // Add the description
     cell_1.innerHTML = "<details> <summary>"+ abilityLevel.levelName + "</summary>" + abilityLevel.levelDescription + "</details>";
-    // options levels
+    
+    // Options levels
     let cell_2 = document.createElement('td');
     fillOptions(cell_2, abilityLevel.levelName);
-    // text area for the scenario
+    
+    // Text area for the scenario
     let cell_3 = document.createElement('td');
     var ta = document.createElement("TEXTAREA");
     ta.rows = "1";
+
+    // Append all the elements
     cell_3.appendChild(ta);
     row.appendChild(cell_1);
     row.appendChild(cell_2);
@@ -62,24 +69,36 @@ function fillRow(tbody, abilityLevel){
     tbody.appendChild(row);
 }
 
-function fillTable(ability) {
-    
+
+function fillTable(ability) {    
     if (!ability.hasSubAbilities) {
+        fillNormalAbility(ability);
+    } else {
+        fillSubAbility(ability);
+    }
+}
+
+
+function fillSubAbility(ability) {
+    let tDescription = document.createElement('p');
+
+    // Initial description for the ability
+    tDescription.innerHTML = ability.abilityDescription;
+    document.getElementById(ability.abilityName).appendChild(tDescription);
+
+    // For each sub-ability
+    for (let i = 0; i < ability.subAbilities.length; i++) {
+        let subAbilityName = document.createElement('p');
+        subAbilityName.innerHTML = "<b>" + ability.subAbilities[i].subAbilityName + "</b>: " + ability.subAbilities[i].subAbilityDescription;
+        document.getElementById(ability.abilityName).appendChild(subAbilityName);
+
         let table = document.createElement('table');
         let thead = document.createElement('thead');
         let tbody = document.createElement('tbody');
-        let tDescription = document.createElement('p');
         table.appendChild(thead);
         table.appendChild(tbody);
 
-        // Initial description for the ability
-        tDescription.innerHTML = ability.abilityDescription;
-        document.getElementById(ability.abilityName).appendChild(tDescription);
-
-        // Adding the entire table to the body tag
-        document.getElementById(ability.abilityName).appendChild(table);
-
-        // Creating and adding data to first row of the table
+        // Compose the table for the sub-ability
         let row_1 = document.createElement('tr');
         let heading_1 = document.createElement('th');
         heading_1.innerHTML = "Level";
@@ -92,51 +111,49 @@ function fillTable(ability) {
         row_1.appendChild(heading_3);
         thead.appendChild(row_1);
 
-        // Create a row for every level
-        for (let i=0; i<ability.abilityLevels.length; i++) {
-            fillRow(tbody, ability.abilityLevels[i]);
+        for (let j = 0; j < ability.subAbilities[i].subAbilityLevels.length; j++) {
+            fillRow(tbody, ability.subAbilities[i].subAbilityLevels[j]);
         }
-    } else {
-        let tDescription = document.createElement('p');
 
-        // Initial description for the ability
-        tDescription.innerHTML = ability.abilityDescription;
-        document.getElementById(ability.abilityName).appendChild(tDescription);
-
-        // For each sub-ability
-        for (let i=0; i<ability.subAbilities.length; i++) {
-            let subAbilityName = document.createElement('p');
-            subAbilityName.innerHTML = "<b>" + ability.subAbilities[i].subAbilityName + "</b>: " + ability.subAbilities[i].subAbilityDescription;
-            document.getElementById(ability.abilityName).appendChild(subAbilityName);
-
-            let table = document.createElement('table');
-            let thead = document.createElement('thead');
-            let tbody = document.createElement('tbody');
-            table.appendChild(thead);
-            table.appendChild(tbody);
-
-            // Compose the table for the sub-ability
-            let row_1 = document.createElement('tr');
-            let heading_1 = document.createElement('th');
-            heading_1.innerHTML = "Level";
-            let heading_2 = document.createElement('th');
-            heading_2.innerHTML = "Achieved?";
-            let heading_3 = document.createElement('th');
-            heading_3.innerHTML = "Scenario";
-            row_1.appendChild(heading_1);
-            row_1.appendChild(heading_2);
-            row_1.appendChild(heading_3);
-            thead.appendChild(row_1);
-
-            for (let j=0; j<ability.subAbilities[i].subAbilityLevels.length; j++) {
-                fillRow(tbody, ability.subAbilities[i].subAbilityLevels[j]);
-            }
-
-            // Adding the entire table to the body tag
-            document.getElementById(ability.abilityName).appendChild(table);
-        }
+        // Adding the entire table to the body tag
+        document.getElementById(ability.abilityName).appendChild(table);
     }
 }
+
+function fillNormalAbility(ability) {
+    let table = document.createElement('table');
+    let thead = document.createElement('thead');
+    let tbody = document.createElement('tbody');
+    let tDescription = document.createElement('p');
+    table.appendChild(thead);
+    table.appendChild(tbody);
+
+    // Initial description for the ability
+    tDescription.innerHTML = ability.abilityDescription;
+    document.getElementById(ability.abilityName).appendChild(tDescription);
+
+    // Adding the entire table to the body tag
+    document.getElementById(ability.abilityName).appendChild(table);
+
+    // Creating and adding data to first row of the table
+    let row_1 = document.createElement('tr');
+    let heading_1 = document.createElement('th');
+    heading_1.innerHTML = "Level";
+    let heading_2 = document.createElement('th');
+    heading_2.innerHTML = "Achieved?";
+    let heading_3 = document.createElement('th');
+    heading_3.innerHTML = "Scenario";
+    row_1.appendChild(heading_1);
+    row_1.appendChild(heading_2);
+    row_1.appendChild(heading_3);
+    thead.appendChild(row_1);
+
+    // Create a row for every level
+    for (let i = 0; i < ability.abilityLevels.length; i++) {
+        fillRow(tbody, ability.abilityLevels[i]);
+    }
+}
+
 
 async function fillTables(){
     var data = await getJSONAbilities();
@@ -182,23 +199,21 @@ function drawCircles(ctx, label, levels, alpha){
     }
 }
 
+
 function draw() {
     const canvas = document.getElementById("canvas");
 
     if (canvas == null) {
         return;
     }
-    // var x1 = document.getElementById("ConfigurabilitySelect").value;
     const ctx = canvas.getContext('2d');
     drawCircles(ctx,"Configurability", Configurability, 0 );
     drawCircles(ctx,"Dependability", Dependability, 0.5 );
     drawCircles(ctx,"Adaptability", Adaptability, 1.5 );
     drawCircles(ctx,"Autonomy", Adaptability, -1.5 );
-    // clear canvas
-    //ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // set line stroke and line width
 }
-//draw();
+
+
 function pdf() {
     var abilities = []
     const elements =  document.getElementsByClassName('tabcontent');
@@ -211,6 +226,7 @@ function pdf() {
     w.document.close()
     w.print();
 }
+
 
 async function getJSONAbilities() {
     const response = await fetch("https://raw.githubusercontent.com/fmselab/ADVISOR/main/docs/evaluator/abilities.json");
