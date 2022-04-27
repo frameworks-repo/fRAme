@@ -364,6 +364,186 @@
                     ]
                 }
             ]
+        },
+        {
+            "abilityName": "Perception",
+            "abilityDescription": "The ability of the system to perceive its environment. It includes the ability to interpret information and to make informed and accurate deductions about the environment based on sensory data.",
+            "hasSubAbilities": true,
+            "subAbilities": [
+                {
+                    "subAbilityName": "Perception",
+                    "subAbilityDescription": "The following levels refer to the generic ability of a system to perceive which are generally speaking categorised by abstracting sensor data in each level.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No external perception",
+                            "levelDescription": "Some systems do not sense their environment but simply carry out sets of pre-programmed actions triggered by a starting event. Although there may be safety systems that cause the system to fail-safe these do not alter the operating cycle behaviour."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Direct Single and Multi-parameter sensing",
+                            "levelDescription": "A system uses sensors that provide a single, or multiple parameter output directly. The system utilises these outputs to directly alter behaviour within an operating cycle."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Low Level processing parameter sensing",
+                            "levelDescription": "A system may use fixed and known markers in the environment (e.g. Barcodes, QR codes, etc). The detection of these markers provide triggers to alter or switch between behaviours or sequences of behaviours."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Multi-Parameter Perception",
+                            "levelDescription": "A system uses multiple single parameter sensors to create a unified model of the environment. Sense data can be collected from multiple types of sensor as well as multiple sensors of the same type. Each sensor contributes information to the model. The model is used to alter the behaviour of the system."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Feature based perception",
+                            "levelDescription": "Sense data is gathered from a region of the environment such that the sense data has a spatial mapping. The richness of the sense data information content is such that it is possible to apply feature extraction to the sense data and thereby interpret the content of the sense data as a set or sets of features. The system performs a data reduction with an assumption about the expected features. The presence of features is used to alter behaviour."
+                        },
+                        {
+                            "level": 5,
+                            "levelName": "Grouped feature detection",
+                            "levelDescription": "The sense data gathered from the environment can be processed such that features can be aggregated to capture linkages between features. A group of features may relate to the same real object in the environment, but where the object has not been identified. The characteristics of the feature group can be used to alter the behaviour of the system. For example a set of features of the same colour that move in the same way may relate to a pink ball."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Object identification",
+                            "levelDescription": "The system can identify objects or coherent entities that it has detected in the scene through sets of grouped features and can use this identification to alter the system behaviour. The importance in this level is that a data source or a priori object model is required."
+                        },
+                        {
+                            "level": 7,
+                            "levelName": "Property identification",
+                            "levelDescription": "The system is able to deduce the properties of objects in the scene or scene itself and utilise those properties within system behaviour."
+                        },
+                        {
+                            "level": 8,
+                            "levelName": "Hidden state identification",
+                            "levelDescription": "The system is able to infer properties of an object, person or scene that are not directly observable. The scene and objects are not fully available in data sources ahead of time and scene interpretation and classification is required."
+                        }
+                    ]
+                }, 
+                {
+                    "subAbilityName": "Object recognition",
+                    "subAbilityDescription": "This ability may range from being able to recognise instances of a single object, to being able to distinguish between many different objects or even identify objects that fit a generic pattern.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No Recognition",
+                            "levelDescription": "The system does not need to detect or recognise objects in the environment in order to carry out its task."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Feature detection",
+                            "levelDescription": "Sense data is gathered from a region of the environment such that the data has a spatial component and can be mapped to a model of that region. The richness of the sense data is such that it is possible to apply a feature detection process to create a set or sets of features that persist."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Object detection",
+                            "levelDescription": "Multiple persistent features can be grouped to build models of distinct objects allowing objects to be differentiated from each other and from the environment."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Object recognition - single instance",
+                            "levelDescription": "Object models created from sense data can be matched to specific known instances of an object with a reliability that is appropriate to the task."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Object recognition - one of many",
+                            "levelDescription": "Object models created from sense data can be matched to one of a number of specific instances of known objects with a reliability that is appropriate to the task."
+                        },
+                        {
+                            "level": 5,
+                            "levelName": "Parameterised object recognition",
+                            "levelDescription": "Object models created from sense data can be matched to a number of known, parameterised object types. The settings for the parameters (e.g. size ratio, curvature, joint position etc) can be deduced from the sensed object model. Note that in conjunction with single instance recognition ability this implies the ability to recognise a known (possibly learned) instance of a generic object."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Context based recognition",
+                            "levelDescription": "The system is able to use its knowledge of context or location to improve its ability to recognise objects by reducing ambiguities through expectations based on location or context."
+                        },
+                        {
+                            "level": 7,
+                            "levelName": "Object variable recognition",
+                            "levelDescription": "The system is able to recognise objects where there is a degree of variability in the object that approaches the scale of the object. "
+                        },
+                        {
+                            "level": 8,
+                            "levelName": "Novelty recognition",
+                            "levelDescription": "The system is able to recognise novelty in a known object, or parameterised object type."
+                        },
+                        {
+                            "level": 9,
+                            "levelName": "Unknown object categorisation (Rigid)",
+                            "levelDescription": "The system is able to assess an unknown rigid object based on sense data and deduce properties that are relevant to the task."
+                        },
+                        {
+                            "level": 10,
+                            "levelName": "Object property detection",
+                            "levelDescription": "It is possible to use sense data and the derived object model to deduce the properties of an object."
+                        },
+                        {
+                            "level": 11,
+                            "levelName": "Flexible object detection",
+                            "levelDescription": "The system is able to detect the shape and form of objects that are deformable and generate parameterised models of flexible objects. This includes articulated objects and objects with flexible and rigid components."
+                        },
+                        {
+                            "level": 12,
+                            "levelName": "Flexible object classification",
+                            "levelDescription": "The system is able to classify flexible objects by their properties and parameters. It is able to recognise specific known objects relevant to the task with an appropriate level of reliability."
+                        },
+                        {
+                            "level": 13,
+                            "levelName": "Animate objects",
+                            "levelDescription": "The system is able to detect animate objects and provide a classification appropriate to the task."
+                        },
+                        {
+                            "level": 14,
+                            "levelName": "Pose estimation of animate objects",
+                            "levelDescription": "The system is able to estimate the pose of an animate object within the environment."
+                        }
+                    ]
+                }, 
+                {
+                    "subAbilityName": "Scene perception",
+                    "subAbilityDescription": "In many applications systems will need to be able to interpret the context of a wider scene, identifying static elements in the scene such as walls doors ceilings floor etc. as well as the delineation of objects. This scene interpretation is not related to the recognition of specific objects but to the wider identification of spaces and objects within a working environment.",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "No scene perception",
+                            "levelDescription": "The system does not need to be able to interpret the environment in order to carry out its task."
+                        },
+                        {
+                            "level": 1,
+                            "levelName": "Basic feature detection",
+                            "levelDescription": "The system is able to detect features in the environment that relate to static structures in that environment."
+                        },
+                        {
+                            "level": 2,
+                            "levelName": "Static Structures",
+                            "levelDescription": "The system is able to identify static structures in the environment in a way that is appropriate to the task."
+                        },
+                        {
+                            "level": 3,
+                            "levelName": "Combined Structures",
+                            "levelDescription": "The system is able to provide a consistent interpretation of the static structures in the environment over time."
+                        },
+                        {
+                            "level": 4,
+                            "levelName": "Multiple object detection",
+                            "levelDescription": "The system is able to delineate multiple objects from the static environment where there may be partially occluded with respect to the sense data gathered."
+                        },
+                        {
+                            "level": 5,
+                            "levelName": "Object arrangement detection",
+                            "levelDescription": "The system is able to detect arrangements of objects, for example objects in a stack or mixed in a receptacle and identify the relationships between objects with a success appropriate to the task."
+                        },
+                        {
+                            "level": 6,
+                            "levelName": "Dynamic object detection",
+                            "levelDescription": "The system is able to detect an object that is moving within a static environment."
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
