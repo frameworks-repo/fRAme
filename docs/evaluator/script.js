@@ -44,7 +44,7 @@ function fillOptions(cell, element){
 
 
 // el: the element to be added
-function fillRow(tbody, abilityLevel){
+function fillRow(tbody, abilityLevel, keyName){
     // First row the element
     let row = document.createElement('tr');
     let cell_1 = document.createElement('td');
@@ -54,7 +54,7 @@ function fillRow(tbody, abilityLevel){
     
     // Options levels
     let cell_2 = document.createElement('td');
-    fillOptions(cell_2, abilityLevel + "_" + abilityLevel.levelName);
+    fillOptions(cell_2, keyName + "_" + abilityLevel.level);
     
     // Text area for the scenario
     let cell_3 = document.createElement('td');
@@ -112,7 +112,7 @@ function fillSubAbility(ability) {
         thead.appendChild(row_1);
 
         for (let j = 0; j < ability.subAbilities[i].subAbilityLevels.length; j++) {
-            fillRow(tbody, ability.subAbilities[i].subAbilityLevels[j]);
+            fillRow(tbody, ability.subAbilities[i].subAbilityLevels[j], ability.subAbilities[i].subAbilityName);
         }
 
         // Adding the entire table to the body tag
@@ -150,7 +150,7 @@ function fillNormalAbility(ability) {
 
     // Create a row for every level
     for (let i = 0; i < ability.abilityLevels.length; i++) {
-        fillRow(tbody, ability.abilityLevels[i]);
+        fillRow(tbody, ability.abilityLevels[i], ability.abilityName);
     }
 }
 
