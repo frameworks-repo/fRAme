@@ -164,15 +164,16 @@ async function fillTables(){
 
 
 // ctx: the graphical context
-// label: the lebel (string)
-// levels of the capability
-// angle
-function drawCircles(ctx, label, levels, alpha){
+// ability: the ability
+// alpha: the angle
+function drawCircles(ctx, ability, alpha){
     const length = 300
-    var step = length/levels.length;
+    console.log(ability.abilityName);
+    var step = length/ability.abilityLevels.length;
     const radius = 10;
     var X = canvas.width / 2; 
     var Y = canvas.height / 2;   
+
     // Draw the line
     ctx.beginPath();
     ctx.moveTo(X, Y);
@@ -180,14 +181,54 @@ function drawCircles(ctx, label, levels, alpha){
     ctx.strokeStyle = 'gray';
     ctx.lineWidth = 5;
     ctx.stroke();
+
     // Write the label
     ctx.font = "10px Arial";
-    ctx.fillText(label, X+length*Math.cos(alpha) + 15 ,Y+length*Math.sin(alpha) + 15); 
+    ctx.fillText(ability.abilityName, X+length*Math.cos(alpha) + 15 ,Y+length*Math.sin(alpha) + 15); 
+
     // Draw the circles
-    for (let index = 0; index < levels.length; ++index) {
-        const element = levels[index];
-        var value = document.getElementById(element).value;
-        console.log("value of " + element + " val = " + value);        
+    for (let index = 0; index < ability.abilityLevels.length; ++index) {
+        const element = ability.abilityLevels[index];        
+        var value = document.getElementById(ability.abilityName + "_" + element.level).value;
+        ctx.beginPath();
+        ctx.arc(X + (index + 1)  * step *  Math.cos(alpha), Y + (index +1) * step *  Math.sin(alpha), radius, 0, 2 * Math.PI, false);
+        ctx.lineWidth = 3;
+        ctx.fillStyle = colors[value];
+        ctx.fill();
+        // Set the color
+        ctx.strokeStyle = colors[value];
+        ctx.stroke();
+    }
+}
+
+
+// ctx: the graphical context
+// ability: the ability
+// alpha: the angle
+function drawCirclesSubAbilities(ctx, subAbility, alpha){
+    const length = 300
+    console.log(subAbility.subAbilityName);
+    var step = length/subAbility.subAbilityLevels.length;
+    const radius = 10;
+    var X = canvas.width / 2; 
+    var Y = canvas.height / 2;   
+
+    // Draw the line
+    ctx.beginPath();
+    ctx.moveTo(X, Y);
+    ctx.lineTo(X+length*Math.cos(alpha),Y+length*Math.sin(alpha));
+    ctx.strokeStyle = 'gray';
+    ctx.lineWidth = 5;
+    ctx.stroke();
+
+    // Write the label
+    ctx.font = "10px Arial";
+    ctx.fillText(subAbility.subAbilityName, X+length*Math.cos(alpha) + 15 ,Y+length*Math.sin(alpha) + 15); 
+
+    // Draw the circles
+    for (let index = 0; index < subAbility.subAbilityLevels.length; ++index) {
+        const element = subAbility.subAbilityLevels[index];        
+        var value = document.getElementById(subAbility.subAbilityName + "_" + element.level).value;
         ctx.beginPath();
         ctx.arc(X + (index + 1)  * step *  Math.cos(alpha), Y + (index +1) * step *  Math.sin(alpha), radius, 0, 2 * Math.PI, false);
         ctx.lineWidth = 3;
@@ -210,14 +251,19 @@ async function draw() {
 
     // Start drawing data
     var data = await getJSONAbilities();
+    var alpha = 0;
     for (let i=0; i<data.length; i++) {
-        
+        if (data[i].hasSubAbilities) {
+            // The ability is divided into sub abilities
+            for (let j=0; j<data[i].subAbilities.length; j++) {
+                drawCirclesSubAbilities(ctx, data[i].subAbilities[j], alpha)
+            }
+        } else {
+            // No sub abilities are available
+            drawCircles(ctx, data[i], alpha)
+        }
+        alpha = alpha + 0.5;
     }
-
-    drawCircles(ctx,"Configurability", Configurability, 0 );
-    drawCircles(ctx,"Dependability", Dependability, 0.5 );
-    drawCircles(ctx,"Adaptability", Adaptability, 1.5 );
-    drawCircles(ctx,"Autonomy", Adaptability, -1.5 );
 }
 
 
@@ -237,4 +283,92 @@ async function getJSONAbilities() {
     const response = await fetch("https://raw.githubusercontent.com/fmselab/ADVISOR/main/docs/evaluator/abilities.json");
     const json = await response.json();
     return json.data;
+}
+
+
+async function table() {
+    // Start creating the table
+    let table = document.createElement('table');
+    let tbody = document.createElement('tbody');
+    table.appendChild(tbody);
+    document.getElementById("AdvisorTable").innerHTML = "";
+    document.getElementById("AdvisorTable").appendChild(table);
+
+    // Get data and iterate over them
+    var data = await getJSONAbilities();
+    for (let i=0; i<data.length; i++) {
+        if (data[i].hasSubAbilities) {
+            // Header for the ability when sub abilities are available
+            let abilityRow = document.createElement('tr');
+            let heading_1 = document.createElement('td');
+            let heading_2 = document.createElement('td');
+
+            heading_1.innerHTML = "<b>" + data[i].abilityName + "</b>";
+            heading_2.innerHTML = "";
+            
+            abilityRow.appendChild(heading_1);
+            abilityRow.appendChild(heading_2);
+            tbody.appendChild(abilityRow);
+
+            // The ability is divided into sub abilities
+            for (let j=0; j<data[i].subAbilities.length; j++) {
+                populateLevelsSubAbilities(data[i].subAbilities[j], tbody);
+            }
+        } else {
+            // Header for the ability when no sub abilities are available
+            let abilityRow = document.createElement('tr');
+            let heading_1 = document.createElement('td');
+            let heading_2 = document.createElement('td');
+
+            heading_1.innerHTML = "<b>" + data[i].abilityName + "</b>";
+            heading_2.innerHTML = "";
+            
+            abilityRow.appendChild(heading_1);
+            abilityRow.appendChild(heading_2);
+            tbody.appendChild(abilityRow);
+
+            // Populate levels
+            populateLevels(data[i], tbody);
+        }
+    }
+}
+
+
+function populateLevels(ability, tbody) {
+    let abilityRow = document.createElement('tr');
+    let text1 = document.createElement('td');
+    let text2 = document.createElement('td');
+
+    text1.innerHTML = "";
+    text2.innerHTML = "";
+
+    for (let index = 0; index < ability.abilityLevels.length; ++index) {
+        const element = ability.abilityLevels[index];        
+        var value = document.getElementById(ability.abilityName + "_" + element.level).value;
+        text2.innerHTML = text2.innerHTML + "<span class='dot' style='background-color:" + colors[value] + "'></span> &nbsp;&nbsp;"
+    }
+
+    abilityRow.appendChild(text1);
+    abilityRow.appendChild(text2);
+    tbody.appendChild(abilityRow);
+}
+
+
+function populateLevelsSubAbilities(subAbility, tbody) {
+    let abilityRow = document.createElement('tr');
+    let text1 = document.createElement('td');
+    let text2 = document.createElement('td');
+
+    text1.innerHTML = subAbility.subAbilityName;
+    text2.innerHTML = "";
+
+    for (let index = 0; index < subAbility.subAbilityLevels.length; ++index) {
+        const element = subAbility.subAbilityLevels[index];        
+        var value = document.getElementById(subAbility.subAbilityName + "_" + element.level).value;
+        text2.innerHTML = text2.innerHTML + "<span class='dot' style='background-color:" + colors[value] + "'></span> &nbsp;&nbsp;"
+    }
+
+    abilityRow.appendChild(text1);
+    abilityRow.appendChild(text2);
+    tbody.appendChild(abilityRow);
 }

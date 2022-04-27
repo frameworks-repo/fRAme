@@ -46,3 +46,13 @@ body {
   border: 1px solid #ccc;
   border-top: none;
 } 
+
+.dot {
+  height: 15px;
+  width: 15px;
+  background-color: #bbb;
+  border-radius: 50%;
+  border-color: #000;
+  border: 1px solid black;
+  display: inline-block;
+}
