@@ -1,23 +1,22 @@
 //options to be added
-var options = ["Not valid","Satisfied","Improvable","Improvable", "Does not apply"];
-var colors = ['#FF0000', '#FF0000', '#00FF00' ,'#FFFF00' ,'#FF00FF']
+var options = ["Not valid","Satisfied","Improvable (low effort)","Improvable (high effort)", "Does not apply"];
+var colors = ['#000000', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
 
-var Configurability = ["Static Configuration", "Start-upConfiguration", "Run-time Configuration","Run-time Self Configuration","Autonomous Configuration"];
+var Configurability = ["Static Configuration", "Start-up Configuration", "Run-time Configuration","Run-time Self Configuration","Autonomous Configuration"];
+var Adaptability = ["No Adaptation","Recognition of the need for adaptation", "Adaptation of individual components/parameters/tasks", "Process chain adaptation / Multiple parameters adaptation", "Communicated component/parameter adaptation"];
 var Dependability = ["No dependability", "Mean failure dependability", "Fails Safe", "Failure Recovery", "Graceful Degradation", "Task dependability", "Mission dependability", "Predictive dependability"];
-var Adaptability = ["No Adaptation","Recognition of the need for adaptation", "Adaptation of individual components/parameters/tasks", 
-"Process chain adaptation / Multiple parameters adaptation",
-"Communicated component/parameter adaptation"];
-
-var Autonomy = ["No autonomy", "Basic action", "Basic decisional autonomy",
-"Continuous basic decisional autonomy", "Simple autonomy without environment model",
-"Simple autonomy with environment model", "Task autonomy", "Constrained task autonomy", "Multiple task autonomy", "Dynamic autonomy",
-"Mission oriented autonomy", "Distributed autonomy"];
+var Autonomy = ["No autonomy", "Basic action", "Basic decisional autonomy", "Continuous basic decisional autonomy", "Simple autonomy without environment model", "Simple autonomy with environment model", "Task autonomy", "Constrained task autonomy", "Multiple task autonomy", "Dynamic autonomy", "Mission oriented autonomy", "Distributed autonomy"];
+var Interaction = [
+    ["No interaction", "Direct control", "Direct physical interaction", "Task selection", "Traded autonomy", "Task sequence control", "Supervised autonomy", "Task sequence control", "Mission Goal setting"],
+    ["No feedback", "Visual feedback", "Vision data feedback", "Haptic feedback", "Tele-presence"],
+    ["No interaction", "Communication of own status", "Communication of task status", "Communication of environment information", "Team communication", "Team coordination", "Capability Communication"]
+];
 
 const descriptions = new Map();
 descriptions.set("No Adaptation", "The system does not alter its operating behavior in response to experience gained over time."); 
 
 
-function openCity(evt, cityName) {
+function openAbility(evt, cityName) {
     // Declare all variables
     var i, tabcontent, tablinks;
   
