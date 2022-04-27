@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVISOR: evaluate your PEMS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="fillTables()";>
+    <h1>ADVISOR: evaluate your PEMS</h1>
+    <div class="row">
+        <div class="column" id="content">
+        <!--<form> -->       
+          <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'Configurability')">Configurability</button>
+          <button class="tablinks" onclick="openCity(event, 'Dependability')">Dependability</button>
+          <button class="tablinks" onclick="openCity(event, 'Adaptability')">Adaptability</button>
+          <button class="tablinks" onclick="openCity(event, 'Autonomy')">Autonomy</button>
+          <button class="tablinks" onclick="draw()">DRAW</button>
+          <button class="tablinks" onclick="pdf()">PDF</button>
+          </div>
+        <div id="Configurability" class="tabcontent"></div>
+        <div id="Dependability" class="tabcontent"></div>
+        <div id="Adaptability"class="tabcontent"></div>
+        <div id="Autonomy"class="tabcontent"></div>
+        <!--<input type="button" value="draw" onclick="draw()">
+         </form>-->
+        </div>
+    <div class="column">  
+    <canvas id="canvas" height="1000" width="900">
+    </canvas>
+    </div>
+    </div> 
+</body>
+
+</html>
