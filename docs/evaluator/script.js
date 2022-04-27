@@ -2,12 +2,6 @@
 var options = ["Not valid","Satisfied","Improvable (low effort)","Improvable (high effort)", "Does not apply"];
 var colors = ['#FFFFFF', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
 
-var Autonomy = ["No autonomy", "Basic action", "Basic decisional autonomy", "Continuous basic decisional autonomy", "Simple autonomy without environment model", "Simple autonomy with environment model", "Task autonomy", "Constrained task autonomy", "Multiple task autonomy", "Dynamic autonomy", "Mission oriented autonomy", "Distributed autonomy"];
-var Interaction = [
-    ["No interaction", "Direct control", "Direct physical interaction", "Task selection", "Traded autonomy", "Task sequence control", "Supervised autonomy", "Task sequence control", "Mission Goal setting"],
-    ["No feedback", "Visual feedback", "Vision data feedback", "Haptic feedback", "Tele-presence"],
-    ["No interaction", "Communication of own status", "Communication of task status", "Communication of environment information", "Team communication", "Team coordination", "Capability Communication"]
-];
 
 
 const descriptions = new Map();
@@ -72,7 +66,7 @@ function fillRow(tbody, abilityLevel){
     tbody.appendChild(row);
 }
 
-function fillTable(abilityName, abilityDescription, hasSubAbilities, abilityLevels) {
+function fillTable(ability) {
 
     let table = document.createElement('table');
     let thead = document.createElement('thead');
@@ -82,11 +76,11 @@ function fillTable(abilityName, abilityDescription, hasSubAbilities, abilityLeve
     table.appendChild(tbody);
 
     // Initial description for the ability
-    tDescription.innerHTML = abilityDescription;
-    document.getElementById(abilityName).appendChild(tDescription);
+    tDescription.innerHTML = ability.abilityDescription;
+    document.getElementById(ability.abilityName).appendChild(tDescription);
 
     // Adding the entire table to the body tag
-    document.getElementById(abilityName).appendChild(table);
+    document.getElementById(ability.abilityName).appendChild(table);
 
     // Creating and adding data to first row of the table
     let row_1 = document.createElement('tr');
@@ -102,12 +96,13 @@ function fillTable(abilityName, abilityDescription, hasSubAbilities, abilityLeve
     thead.appendChild(row_1);
 
     // Create a row for every level
-    if (!hasSubAbilities) {
-        for (let i=0; i<abilityLevels.length; i++) {
-            fillRow(tbody, abilityLevels[i]);
+    if (!ability.hasSubAbilities) {
+        for (let i=0; i<ability.abilityLevels.length; i++) {
+            fillRow(tbody, ability.abilityLevels[i]);
         }
     } else {
         // TODO: Add handling of abilities with subabilities
+        
     }
 }
 
@@ -115,7 +110,7 @@ async function fillTables(){
 
     var data = await getJSONAbilities();
     for (let i=0; i<data.length; i++) {
-        fillTable(data[i].abilityName, data[i].abilityDescription, data[i].hasSubAbilities, data[i].abilityLevels);
+        fillTable(data[i]);
     }
 }
 
