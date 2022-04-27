@@ -22,10 +22,10 @@ function openAbility(evt, cityName) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
-  } 
+} 
 
 
-// element: single capabilityt level
+// element: single capability level
 function fillOptions(cell, element){
     //Create and append select list
     var selectList = document.createElement("select");
@@ -40,6 +40,7 @@ function fillOptions(cell, element){
         selectList.appendChild(option);
     }
 }
+
 // el: the element to be added
 function fillRow(tbody, abilityLevel){
     let row = document.createElement('tr');
@@ -105,7 +106,6 @@ function fillTable(ability) {
 }
 
 async function fillTables(){
-
     var data = await getJSONAbilities();
     for (let i=0; i<data.length; i++) {
         fillTable(data[i]);
