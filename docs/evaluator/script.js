@@ -60,6 +60,7 @@ function fillRow(tbody, abilityLevel, keyName){
     let cell_3 = document.createElement('td');
     var ta = document.createElement("TEXTAREA");
     ta.rows = "1";
+    ta.id = keyName + "_" + abilityLevel.level + "_ta";
 
     // Append all the elements
     cell_3.appendChild(ta);
@@ -267,14 +268,17 @@ async function draw() {
 }
 
 
-function pdf() {
-    var abilities = []
+async function pdf() {
+    // Print the table
+    table();
+
+    var abilities = [];
     const elements =  document.getElementsByClassName('tabcontent');
     for(var i=0; i<elements.length; i++) abilities.push("<h2>" + elements[i].id + "</h2>" + elements[i].innerHTML + "<hr>");
-    var html = abilities.join()
-    const w = window.open('','newpage')
-    w.document.write(html)
-    w.document.close()
+    var html = abilities.join('');
+    const w = window.open('','newpage');
+    w.document.write(html);
+    w.document.close();
     w.print();
 }
 
