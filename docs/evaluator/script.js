@@ -324,6 +324,7 @@ async function pdf() {
     const w = window.open('','newpage');
     w.document.write(html);
     w.document.close();
+    await tableCompose(w.document, "AdvisorTable");
     w.print();
 }
 
