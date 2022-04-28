@@ -268,6 +268,59 @@ async function draw() {
 }
 
 
+async function exportPDFStandard() {
+	// Get data and iterate over them
+    var data = await getJSONAbilities();
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>TRAILS<h1>";
+    for (let i=0; i<data.length; i++) {
+        if (data[i].hasSubAbilities) {
+            // Ability with sub abilities 
+            // Header
+            html += "<h2>" + data[i].abilityName + "</h2>";
+            html += "<p>" + data[i].abilityDescription + "</p><br>";
+
+            for(let j=0; j<data[i].subAbilities.length; j++) {
+                html += "<h3>" + data[i].subAbilities[j].subAbilityName + "</h3>";
+                html += "<p>" + data[i].subAbilities[j].subAbilityDescription + "</p><br>";
+
+                // Levels
+                html += "<table style='border: 1px solid black;'> <tr><th>Level</th><th>Level name</th><th>Description</th></tr>"
+
+                for (let index = 0; index < data[i].subAbilities[j].subAbilityLevels.length; ++index) {
+                    const element = data[i].subAbilities[j].subAbilityLevels[index];        
+                    html += "<tr><td>" + element.level + "</td><td>" + element.levelName + "</td><td>" + element.levelDescription + "</td></td>"
+                }
+
+                html += "</table><br>"
+            }
+
+            html += "<hr>"
+        } else {
+            // Ability with no sub abilities 
+            // Header
+            html += "<h2>" + data[i].abilityName + "</h2>";
+            html += "<p>" + data[i].abilityDescription + "</p><br>";
+
+            // Levels
+            html += "<table style='border: 1px solid black;'> <tr><th>Level</th><th>Level name</th><th>Description</th></tr>"
+
+            for (let index = 0; index < data[i].abilityLevels.length; ++index) {
+                const element = data[i].abilityLevels[index];        
+                html += "<tr><td>" + element.level + "</td><td>" + element.levelName + "</td><td>" + element.levelDescription + "</td></td>"
+            }
+
+            html += "</table><br><hr>"
+        }
+    }
+    html += "</body><html>"
+
+    const w = window.open('','newpage');
+    w.document.write(html);
+    w.document.close();
+    w.print();
+}
+
+
 async function pdf() {
     // Print the table
     await table();
