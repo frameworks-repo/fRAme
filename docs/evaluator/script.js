@@ -370,7 +370,7 @@ async function tableCompose(doc, divName) {
 
             // The ability is divided into sub abilities
             for (let j=0; j<data[i].subAbilities.length; j++) {
-                populateLevelsSubAbilities(data[i].subAbilities[j], tbody);
+                populateLevelsSubAbilities(data[i].subAbilities[j], tbody, doc);
             }
         } else {
             // Header for the ability when no sub abilities are available
@@ -390,16 +390,16 @@ async function tableCompose(doc, divName) {
             tbody.appendChild(abilityRow);
 
             // Populate levels
-            populateLevels(data[i], tbody);
+            populateLevels(data[i], tbody, doc);
         }
     }
 }
 
 
-function populateLevels(ability, tbody) {
-    let abilityRow = document.createElement('tr');
-    let text1 = document.createElement('td');
-    let text2 = document.createElement('td');
+function populateLevels(ability, tbody, doc) {
+    let abilityRow = doc.createElement('tr');
+    let text1 = doc.createElement('td');
+    let text2 = doc.createElement('td');
 
     text1.innerHTML = "";
     text2.innerHTML = "";
@@ -417,10 +417,10 @@ function populateLevels(ability, tbody) {
 }
 
 
-function populateLevelsSubAbilities(subAbility, tbody) {
-    let abilityRow = document.createElement('tr');
-    let text1 = document.createElement('td');
-    let text2 = document.createElement('td');
+function populateLevelsSubAbilities(subAbility, tbody, doc) {
+    let abilityRow = doc.createElement('tr');
+    let text1 = doc.createElement('td');
+    let text2 = doc.createElement('td');
 
     text1.innerHTML = subAbility.subAbilityName;
     text2.innerHTML = "";
