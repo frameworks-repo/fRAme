@@ -1,4 +1,4 @@
-# ADVISOR
-Adaptive Capabilities Evaluation Framework for Programmable Electronic Medical Systems
+# TRAILS
+Evaluation Framework for Smarter Medical Devices
 
-https://fmselab.github.io/ADVISOR/
+https://fmselab.github.io/TRAILS/
