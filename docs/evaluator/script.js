@@ -284,7 +284,7 @@ async function exportPDFStandard() {
                 html += "<p>" + data[i].subAbilities[j].subAbilityDescription + "</p><br>";
 
                 // Levels
-                html += "<table style='border: 1px solid black;'> <tr><th>Level</th><th>Level name</th><th>Description</th></tr>"
+                html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th>Level</th><th>Level name</th><th>Description</th></tr>"
 
                 for (let index = 0; index < data[i].subAbilities[j].subAbilityLevels.length; ++index) {
                     const element = data[i].subAbilities[j].subAbilityLevels[index];        
@@ -302,7 +302,7 @@ async function exportPDFStandard() {
             html += "<p>" + data[i].abilityDescription + "</p><br>";
 
             // Levels
-            html += "<table style='border: 1px solid black;'> <tr><th>Level</th><th>Level name</th><th>Description</th></tr>"
+            html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th>Level</th><th>Level name</th><th>Description</th></tr>"
 
             for (let index = 0; index < data[i].abilityLevels.length; ++index) {
                 const element = data[i].abilityLevels[index];        
