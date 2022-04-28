@@ -271,7 +271,7 @@ async function draw() {
 async function exportPDFStandard() {
 	// Get data and iterate over them
     var data = await getJSONAbilities();
-    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>TRAILS<h1>";
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> tr, td, th {border: 1px solid black;} </style></head><body><h1>TRAILS<h1>";
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Ability with sub abilities 
