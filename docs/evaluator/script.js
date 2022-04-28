@@ -274,7 +274,7 @@ async function pdf() {
 
     // Get data and iterate over them
     var data = await getJSONAbilities();
-    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>ADVISOR<h1>";
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'></head><body><h1>TRAILS<h1>";
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Ability with sub abilities 
@@ -330,7 +330,7 @@ async function pdf() {
 
 
 async function getJSONAbilities() {
-    const response = await fetch("https://raw.githubusercontent.com/fmselab/ADVISOR/main/docs/evaluator/abilities.json");
+    const response = await fetch("https://raw.githubusercontent.com/fmselab/TRAILS/main/docs/evaluator/abilities.json");
     const json = await response.json();
     return json.data;
 }
