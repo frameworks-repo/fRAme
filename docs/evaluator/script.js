@@ -327,7 +327,7 @@ async function pdf() {
 
     // Get data and iterate over them
     var data = await getJSONAbilities();
-    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> td, th {border: 1px solid black;} </style></head><body><h1>TRAILS<h1>";
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> .tb {border: 1px solid black;} </style></head><body><h1>TRAILS<h1>";
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Ability with sub abilities 
@@ -340,13 +340,13 @@ async function pdf() {
                 html += "<p>" + data[i].subAbilities[j].subAbilityDescription + "</p><br>";
 
                 // Levels
-                html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th>Level</th><th>Achieved?</th><th>Scenario</th></tr>"
+                html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th class='tb'>Level</th><th class='tb'>Achieved?</th><th class='tb'>Scenario</th></tr>"
 
                 for (let index = 0; index < data[i].subAbilities[j].subAbilityLevels.length; ++index) {
                     const element = data[i].subAbilities[j].subAbilityLevels[index];        
                     var value = document.getElementById(data[i].subAbilities[j].subAbilityName + "_" + element.level).value;
                     var scenario = document.getElementById(data[i].subAbilities[j].subAbilityName + "_" + element.level + "_ta").value;
-                    html += "<tr><td>" + element.levelName + "</td><td>" + options[value] + "</td><td>" + scenario + "</td></td>"
+                    html += "<tr><td class='tb'>" + element.levelName + "</td><td class='tb'>" + options[value] + "</td><td class='tb'>" + scenario + "</td></td>"
                 }
 
                 html += "</table><br>"
@@ -360,13 +360,13 @@ async function pdf() {
             html += "<p>" + data[i].abilityDescription + "</p><br>";
 
             // Levels
-            html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th>Level</th><th>Achieved?</th><th>Scenario</th></tr>"
+            html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th class='tb'>Level</th><th class='tb'>Achieved?</th><th class='tb'>Scenario</th></tr>"
 
             for (let index = 0; index < data[i].abilityLevels.length; ++index) {
                 const element = data[i].abilityLevels[index];        
                 var value = document.getElementById(data[i].abilityName + "_" + element.level).value;
                 var scenario = document.getElementById(data[i].abilityName + "_" + element.level + "_ta").value;
-                html += "<tr><td>" + element.levelName + "</td><td>" + options[value] + "</td><td>" + scenario + "</td></td>"
+                html += "<tr><td class='tb'>" + element.levelName + "</td><td class='tb'>" + options[value] + "</td><td class='tb'>" + scenario + "</td></td>"
             }
 
             html += "</table><br><hr>"
