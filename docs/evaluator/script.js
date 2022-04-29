@@ -30,7 +30,7 @@ function fillOptions(cell, element){
     // Create and append select list
     var selectList = document.createElement("select");
     selectList.id = element;
-    selectList.onchange = "draw()";
+    selectList.setAttribute( "onchange", "table();");
     cell.appendChild(selectList);
     
     // Create and append the options
