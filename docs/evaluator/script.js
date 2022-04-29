@@ -365,7 +365,7 @@ async function pdf() {
             for (let index = 0; index < data[i].abilityLevels.length; ++index) {
                 const element = data[i].abilityLevels[index];        
                 var value = document.getElementById(data[i].abilityName + "_" + element.level).value;
-                var scenario = document.getElementById(data[i].abilityName + "_" + element.level + "_ta").value;
+                var scenario = document.getElementById(data[i].abilityName + "_" + element.level + "_ta").value.replace(/(\n)+/g, '<br />');
                 html += "<tr><td class='tb'>" + element.levelName + "</td><td class='tb'>" + options[value] + "</td><td class='tb'>" + scenario + "</td></td>"
             }
 
