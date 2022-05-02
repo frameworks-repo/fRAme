@@ -55,6 +55,17 @@ body {
   border-color: #000;
   border: 1px solid black;
   display: inline-block;
+  margin-left: 10px;
+}
+
+.levelName {
+  height: 15px;
+  width: 15px;
+  border-color: white;
+  border: 1px solid white;
+  display: inline-block;
+  margin-left: 10px;
+  text-align: center;
 }
 
 @media print {

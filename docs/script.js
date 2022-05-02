@@ -397,9 +397,21 @@ async function tableCompose(doc, divName) {
     // Start creating the table
     let table = doc.createElement('table');
     let tbody = doc.createElement('tbody');
-    table.appendChild(tbody);
+	let thead = doc.createElement('thead');
+	
+    table.appendChild(thead);
+	table.appendChild(tbody);
     doc.getElementById(divName).innerHTML = "";
     doc.getElementById(divName).appendChild(table);
+
+	// Levels
+	var  textTXT = "";
+	textTXT = "<tr><td><b></b></td><td style='padding-left: 10px;'><b>Levels</b></td></tr><tr><td></td><td style='border-bottom: 1px solid black; border-collapse: collapse;'>";
+	for (let i=0; i<=14; i++) {
+		textTXT = textTXT + "<span class='levelName'>" + i + "</span>";
+	}
+	textTXT = textTXT + "</td></tr>";
+	thead.innerHTML = textTXT;
 
     // Get data and iterate over them
     var data = await getJSONAbilities();
@@ -456,12 +468,11 @@ function populateLevels(ability, tbody, doc) {
 
     text1.innerHTML = "";
     text2.innerHTML = "";
-    text2.style.paddingLeft = "5px";
 
     for (let index = 0; index < ability.abilityLevels.length; ++index) {
         const element = ability.abilityLevels[index];        
         var value = document.getElementById(ability.abilityName + "_" + element.level).value;
-        text2.innerHTML = text2.innerHTML + "<span class='dot' style='background-color:" + colors[value] + "'></span> &nbsp;&nbsp;"
+        text2.innerHTML = text2.innerHTML + "<span class='dot' style='background-color:" + colors[value] + "'></span>"
     }
 
     abilityRow.appendChild(text1);
@@ -477,12 +488,11 @@ function populateLevelsSubAbilities(subAbility, tbody, doc) {
 
     text1.innerHTML = subAbility.subAbilityName;
     text2.innerHTML = "";
-    text2.style.paddingLeft = "5px";
 
     for (let index = 0; index < subAbility.subAbilityLevels.length; ++index) {
         const element = subAbility.subAbilityLevels[index];        
         var value = document.getElementById(subAbility.subAbilityName + "_" + element.level).value;
-        text2.innerHTML = text2.innerHTML + "<span class='dot' style='background-color:" + colors[value] + "'></span> &nbsp;&nbsp;"
+        text2.innerHTML = text2.innerHTML + "<span class='dot' style='background-color:" + colors[value] + "'></span>"
     }
 
     abilityRow.appendChild(text1);
