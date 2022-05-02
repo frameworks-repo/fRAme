@@ -1,17 +1,60 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-<title>Evaluation Framework for Smarter Medical Devices</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAILS: evaluate your PEMS</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
+<body onload="fillTables()";>
+    <h1>TRAILS: Evaluation framework for smarter medical devices</h1>
+	<p>This web page provides a tool for evaluating your PEMS using TRAILS (evaluaTion fRamework for smArter medIcaL deviceS).</p>
+	<p>TRAILS is part of a research work submitted to <a href="https://2022.acsos.org/">ACSOS 2022</a>. <br>
+	You can download the complete framework description, with all the capabilities and their levels from <u onclick="exportPDFStandard()" style="cursor: pointer;">here</u>.</p>
+	<p>In the followings, additional files related to our research work are listed:
+		<ul>
+			<li>The replication package for the literature review of the paper submitted to ACSOS 2022 (<a href="https://github.com/fmselab/TRAILS/raw/main/files/SLR_REPLICATION_PACKAGE.zip">download</a>)</li>
+			<li>The evaluation of the MVM case study, as presented in the paper submitted to ACSOS 2022 (<a href="https://github.com/fmselab/TRAILS/raw/main/files/MVM%20TRAILS%20classification.pdf">download</a>)</li>
+		</ul>
+	</p>
+	<h4>TRAILS: evaluate your PEMS</h4>
+    <div class="row">
+        <div class="column" id="content">
+        <!--<form> -->       
+          <div class="tab">
+          <button class="tablinks" onclick="openAbility(event, 'Configurability')">Configurability</button>
+          <button class="tablinks" onclick="openAbility(event, 'Adaptability')">Adaptability</button>
+          <button class="tablinks" onclick="openAbility(event, 'Dependability')">Dependability</button>
+          <button class="tablinks" onclick="openAbility(event, 'Autonomy')">Decisional Autonomy</button>
+          <button class="tablinks" onclick="openAbility(event, 'Interaction')">Interaction</button>
+          <button class="tablinks" onclick="openAbility(event, 'Perception')">Perception</button>
+          <button class="tablinks" onclick="openAbility(event, 'Cognitive')">Cognitive</button>
+          <!--<button class="tablinks" onclick="draw()">DRAW</button>-->
+          <!--<button class="tablinks" onclick="table()">TABLE</button>-->
+          <button class="tablinks" onclick="pdf()">Export PDF Report</button>
+          </div>
+        <div id="Configurability" class="tabcontent"></div>
+        <div id="Dependability" class="tabcontent"></div>
+        <div id="Adaptability"class="tabcontent"></div>
+        <div id="Autonomy"class="tabcontent"></div>
+        <div id="Interaction"class="tabcontent"></div>
+        <div id="Perception"class="tabcontent"></div>
+        <div id="Cognitive"class="tabcontent"></div>
+        <!--<input type="button" value="draw" onclick="draw()">
+         </form>-->
+        </div>
+    <div class="column" hidden>  
+        <canvas id="canvas" height="1000" width="900">
+        </canvas>
+    </div>
 
-<body>
-<h1>Evaluation Framework for Smarter Medical Devices</h1>
+    <div class="column" id="AdvisorTable" style="padding-left: 30px;">  
+        <!-- Generate here the resulting table -->
+    </div>
 
-
-
+    </div> 
 </body>
 
 </html>
-
