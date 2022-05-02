@@ -1,5 +1,5 @@
 //options to be added
-var options = ["Not applicable","Satisfied","Improvable (low effort)","Improvable (high effort)", "Not available/Not enabled"];
+var options = ["Not applicable","Satisfied","Improvable (low effort)","Improvable (high effort)", "Unable"];
 var colors = ['#FFFFFF', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
 
 
