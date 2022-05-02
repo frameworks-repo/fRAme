@@ -1,5 +1,5 @@
 //options to be added
-var options = ["Not valid","Satisfied","Improvable (low effort)","Improvable (high effort)", "Does not apply"];
+var options = ["Not applicable","Satisfied","Improvable (low effort)","Improvable (high effort)", "Not available/Not enabled"];
 var colors = ['#FFFFFF', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
 
 
@@ -383,7 +383,7 @@ async function pdf() {
 
 
 async function getJSONAbilities() {
-    const response = await fetch("https://raw.githubusercontent.com/fmselab/TRAILS/main/docs/evaluator/abilities.json");
+    const response = await fetch("https://raw.githubusercontent.com/fmselab/TRAILS/main/docs/abilities.json");
     const json = await response.json();
     return json.data;
 }
