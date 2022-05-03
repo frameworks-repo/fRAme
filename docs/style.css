@@ -69,5 +69,6 @@ body {
 }
 
 @media print {
-body {-webkit-print-color-adjust: exact;}
+body {-webkit-print-color-adjust: exact;
+    zoom: 98%;}
 }
