@@ -383,7 +383,7 @@ async function pdf() {
 
 
 async function getJSONAbilities() {
-    const response = await fetch("https://raw.githubusercontent.com/fmselab/TRAILS/main/docs/abilities.json");
+    const response = await fetch("https://raw.githubusercontent.com/foselab/TRAILS/main/docs/abilities.json");
     const json = await response.json();
     return json.data;
 }
