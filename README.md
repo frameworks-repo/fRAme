@@ -1,4 +1,4 @@
-# TRAILS
-Evaluation Framework for Smarter Medical Devices
+# LENS
+Evaluation Framework for Autonomous Systems
 
-https://foselab.github.io/TRAILS/
+https://foselab.github.io/LENS/
