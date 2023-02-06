@@ -381,6 +381,54 @@ async function pdf() {
     w.print();
 }
 
+async function exportJson() {
+	var abilitiesValues = [];
+
+    // Get data and iterate over them
+    var data = await getJSONAbilities();
+    for (let i=0; i<data.length; i++) {
+        if (data[i].hasSubAbilities) {
+            // Ability with sub abilities 			
+            for(let j=0; j<data[i].subAbilities.length; j++) {
+                for (let index = 0; index < data[i].subAbilities[j].subAbilityLevels.length; ++index) {
+					let level = {
+						"abilityName": data[i].abilityName,
+						"hasSubAbilities": true,
+						"subAbilityName": data[i].subAbilities[j].subAbilityName,
+						"level": data[i].subAbilities[j].subAbilityLevels[index].level,
+						"achieved": document.getElementById(data[i].subAbilities[j].subAbilityName + "_" + element.level).value,
+						"scenario": document.getElementById(data[i].subAbilities[j].subAbilityName + "_" + element.level + "_ta").value
+					};
+					abilitiesValues.push(level);
+                }
+            }
+        } else {
+            // Ability with no sub abilities 
+            for (let index = 0; index < data[i].abilityLevels.length; ++index) {
+				let level = {
+					"abilityName": data[i].abilityName,
+					"hasSubAbilities": false,
+					"subAbilityName": "",
+					"level": data[i].abilityLevels[index].level,
+					"achieved": document.getElementById(data[i].abilityName + "_" + element.level).value,
+					"scenario": document.getElementById(data[i].abilityName + "_" + element.level + "_ta").value
+				};
+				abilitiesValues.push(level);
+            }
+        }
+    }
+	
+	// Convert the array in JSON
+	var jsonData = JSON.stringify(abilitiesValues);
+	const a = document.createElement("a");
+	a.href = URL.createObjectURL(new Blob(jsonData, {
+		type: "text/plain"
+	}));
+	a.setAttribute("download", "LENS.json");
+	document.body.appendChild(a);
+	a.click();
+	document.body.removeChild(a);
+}
 
 async function getJSONAbilities() {
     const response = await fetch("https://raw.githubusercontent.com/foselab/TRAILS/main/docs/abilities.json");
