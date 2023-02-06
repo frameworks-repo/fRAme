@@ -181,6 +181,8 @@ async function fillTables(){
                     document.getElementById(abilities[i].abilityName + "_" + abilities[i].level + "_ta").value = abilities[i].scenario;
 				}
 			}
+			openAbility(event, 'Configurability');
+			table();
 		};
 		fileread.readAsText(file_to_read);
 	});
