@@ -135,7 +135,7 @@
                     "level": 6,
                     "levelName": "Predictive dependability",
                     "levelDescription": "The system is able to predict that a planned future action may result in a loss of dependability, or that the effect of the partial failure of a component can be mitigated by altering future actions. Thus, the system is able to extend its dependability by exploiting predictive mechanisms that permit taking an actionsbefore a failure is observed."
-                }
+                },
 				{
                     "level": 7,
                     "levelName": "Prescriptive dependability",
@@ -368,7 +368,7 @@
                             "levelDescription": "The system or its support systems detect humans within its operating zone and dynamically defines a safe zone that envelopes the user where the system controls its operation to be safe."
                         }
                     ]
-                },
+                }
             ]
         },
 		{
