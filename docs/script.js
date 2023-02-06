@@ -161,6 +161,18 @@ async function fillTables(){
     for (let i=0; i<data.length; i++) {
         fillTable(data[i]);
     }
+	
+	// Attach the listener to the JSON import file
+	document.getElementById("jsonfileinput").addEventListener("change", function() {
+		var file_to_read = document.getElementById("jsonfileinput").files[0];
+		var fileread = new FileReader();
+		fileread.onload = function(e) {
+			var content = e.target.result;
+			var intern = JSON.parse(content); // parse json 
+			console.log(intern); // You can index every object
+		};
+		fileread.readAsText(file_to_read);
+	});
 }
 
 
