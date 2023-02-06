@@ -168,8 +168,19 @@ async function fillTables(){
 		var fileread = new FileReader();
 		fileread.onload = function(e) {
 			var content = e.target.result;
-			var intern = JSON.parse(content); // parse json 
-			console.log(intern); // You can index every object
+			var abilities = JSON.parse(content); 
+			for (let i = 0; i<abilities.length; i++) {
+				if (abilities[i].hasSubAbilities) {
+					// With sub abilities
+					document.getElementById(abilities[i].subAbilityName + "_" + abilities[i].level).value = abilities[i].achieved;
+                    document.getElementById(abilities[i].subAbilityName + "_" + abilities[i].level + "_ta").value = abilities[i].scenario;
+				} 
+				else {
+					// Without sub abilities
+					document.getElementById(abilities[i].abilityName + "_" + abilities[i].level).value = abilities[i].achieved;
+                    document.getElementById(abilities[i].abilityName + "_" + abilities[i].level + "_ta").value = abilities[i].scenario;
+				}
+			}
 		};
 		fileread.readAsText(file_to_read);
 	});
