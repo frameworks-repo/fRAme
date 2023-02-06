@@ -421,9 +421,8 @@ async function exportJson() {
     }
 	
 	// Convert the array in JSON
-	var jsonData = JSON.stringify(abilitiesValues);
 	const a = document.createElement("a");
-	a.href = URL.createObjectURL(new Blob(jsonData, {
+	a.href = URL.createObjectURL(new Blob([JSON.stringify(abilitiesValues, null, 2)], {
 		type: "text/plain"
 	}));
 	a.setAttribute("download", "LENS.json");
