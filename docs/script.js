@@ -391,6 +391,7 @@ async function exportJson() {
             // Ability with sub abilities 			
             for(let j=0; j<data[i].subAbilities.length; j++) {
                 for (let index = 0; index < data[i].subAbilities[j].subAbilityLevels.length; ++index) {
+					const element = data[i].subAbilities[j].subAbilityLevels[index];
 					let level = {
 						"abilityName": data[i].abilityName,
 						"hasSubAbilities": true,
@@ -405,6 +406,7 @@ async function exportJson() {
         } else {
             // Ability with no sub abilities 
             for (let index = 0; index < data[i].abilityLevels.length; ++index) {
+				const element = data[i].abilityLevels[index];        
 				let level = {
 					"abilityName": data[i].abilityName,
 					"hasSubAbilities": false,
