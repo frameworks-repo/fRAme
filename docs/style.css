@@ -8,7 +8,11 @@ body {
 }
 
 .column {
-  flex: 50%;
+  flex: 60%;
+}
+
+.column2 {
+  flex: 40%;
 }
 
  /* Style the tab */
