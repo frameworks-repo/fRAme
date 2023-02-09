@@ -377,8 +377,8 @@
             "hasSubAbilities": true,
             "subAbilities": [
 				{
-                    "subAbilityName": "Perception",
-                    "subAbilityDescription": "The following levels refer to the generic ability of a system to perceive which are generally speaking categorised by abstracting sensor data in each level.",
+                    "subAbilityName": "General Perception",
+                    "subAbilityDescription": "The following levels refer to the generic ability of a system to perceive environmental state by sensor data.",
                     "subAbilityLevels": [
                         {
                             "level": 0,
