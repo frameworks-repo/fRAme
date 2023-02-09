@@ -7,27 +7,27 @@
             "abilityLevels": [
                 {
                     "level": 0,
-                    "levelName": "Static Configuration",
+                    "levelName": "Static configuration",
                     "levelDescription": "The configuration is  set prior to installation and cannot be altered by the user."
                 },
                 {
                     "level": 1,
-                    "levelName": "Start-up Configuration",
+                    "levelName": "Start-up configuration",
                     "levelDescription": "The configuration can be altered by the user prior to each task in order to customize the system before its use."
                 },
                 {
                     "level": 2,
-                    "levelName": "User Run-time Configuration",
+                    "levelName": "User run-time configuration",
                     "levelDescription": "The configuration can be altered by the user during the system use."
                 },
                 {
                     "level": 3,
-                    "levelName": "Run-time Self Configuration",
+                    "levelName": "Run-time self configuration",
                     "levelDescription": "The system can alter its own configuration within a pre-determined set of alternative configurations designed into the system."
                 },
                 {
                     "level": 4,
-                    "levelName": "Autonomous Configuration",
+                    "levelName": "Autonomous configuration",
                     "levelDescription": "The system can alter its own configuration in response to external factors, for example altering its morphology in response to the failure of a sensor or actuator. Note that altering configuration must be carefully distinguished from actions taken as a part of the normal autonomous operation of the system."
                 }
             ]
@@ -377,7 +377,7 @@
             "hasSubAbilities": true,
             "subAbilities": [
 				{
-                    "subAbilityName": "Perception",
+                    "subAbilityName": "General perception",
                     "subAbilityDescription": "The following levels refer to the generic ability of a system to perceive environmental state by sensor data.",
                     "subAbilityLevels": [
                         {
