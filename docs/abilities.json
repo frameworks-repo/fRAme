@@ -108,17 +108,17 @@
                 },
                 {
                     "level": 1,
-                    "levelName": "Fails Safe",
+                    "levelName": "Fails safe",
                     "levelDescription": "The system design is such that there are fail-safe mechanisms built into the system that will halt the operation responsible of the failure and place the system into a safe mode when failures are detected. This includes any failures caused by in-field updates. Dependability is reduced to the ability to fail safely in a proportion of failure modes. Fail-safe dependability relies on being able to detect failure."
                 },
                 {
                     "level": 2,
-                    "levelName": "Failure Recovery",
+                    "levelName": "Failure recovery",
                     "levelDescription": "The system is able to recover from a proportion of failures by restarting or resuming its operation."
                 },
                 {
                     "level": 3,
-                    "levelName": "Graceful Degradation",
+                    "levelName": "Graceful degradation",
                     "levelDescription": "The system is able to recognize the impact of a proportion of failures on its function and operation and is able to compensate for the effect of the failure to maintain dependable operation. Function effectiveness or the ability to achieve optimal working may be impacted."
                 },
                 {
@@ -211,7 +211,7 @@
             "hasSubAbilities": true,
             "subAbilities": [
                 {
-                    "subAbilityName": "Human-System Interaction",
+                    "subAbilityName": "Human-system interaction",
                     "subAbilityDescription": "The following set of levels relate to the interaction between users and the system. This set of ability levels are distinct from the cognitive human-system interaction levels, as they define the method of interaction independently of the cognitive context.",
                     "subAbilityLevels": [
                         {
@@ -256,13 +256,13 @@
                         },
                         {
                             "level": 8,
-                            "levelName": "Mission Goal setting",
+                            "levelName": "Mission goal setting",
                             "levelDescription": "The system is able to execute tasks to achieve a mission. The user is able to interact with the system to direct the overall objectives of the mission."
                         }
                     ]
                 },
 				{
-                    "subAbilityName": "Human-System Interaction Feedback",
+                    "subAbilityName": "Human-system interaction feedback",
                     "subAbilityDescription": "The ability to command a system depends on the user’s perception of the state of the system. This set of levels defines how this state information can be fed back to a user who is operating the system.",
                     "subAbilityLevels": [
                         {
@@ -293,7 +293,7 @@
                     ]
                 },
                 {
-                    "subAbilityName": "System to System Interaction",
+                    "subAbilityName": "System to system interaction",
                     "subAbilityDescription": "The following set of levels relate to the interaction between systems in carrying out a task or mission. No distinction needs to be made between separate systems that communicate and dependent systems that carry out a task. However, there is a distinction between systems that rely on a central controller and those that use distributed decision-making.",
                     "subAbilityLevels": [
                         {
@@ -334,7 +334,7 @@
                     ]
                 },			
 				{
-                    "subAbilityName": "Human-System Interaction Safety",
+                    "subAbilityName": "Human-system interaction safety",
                     "subAbilityDescription": "The following levels only apply to systems that have an inherent level of unsafety in the interaction between the human and the system. For example, if a system is safe at Level 0 then there is no need for it to reach Level 1 safety. For this reason, each successive level relates to systems that exhibit increased levels of potential harm. It is assumed that all systems meet safety criteria appropriate to their environment with respect to electrical and battery safety requirements, typically specified by European CE marking criteria. It is also expected that appropriate safety criteria have been applied with respect to consumables used by the system, for example heated liquids, liquids under pressure, or chemical agents.",
                     "subAbilityLevels": [
                         {
@@ -364,7 +364,7 @@
                         },
                         {
                             "level": 5,
-                            "levelName": "Dynamic User detection",
+                            "levelName": "Dynamic user detection",
                             "levelDescription": "The system or its support systems detect humans within its operating zone and dynamically defines a safe zone that envelopes the user where the system controls its operation to be safe."
                         }
                     ]
@@ -387,7 +387,7 @@
                         },
                         {
                             "level": 1,
-                            "levelName": "Direct Single and Multi-parameter sensing",
+                            "levelName": "Direct single and multi-parameter sensing",
                             "levelDescription": "A system uses sensors that provide a single, or multiple parameter output directly. The system utilises these outputs to directly alter behaviour within an operating cycle."
                         },
                         {
@@ -397,7 +397,7 @@
                         },
                         {
                             "level": 3,
-                            "levelName": "Multi-Parameter Perception",
+                            "levelName": "Multi-parameter perception",
                             "levelDescription": "A system uses multiple single-parameter sensors to create a unified model of the environment. Sense data can be collected from multiple types of sensor as well as multiple sensors of the same type. Each sensor contributes information to the model. The model is used to alter the behaviour of the system."
                         },
                         {
@@ -433,7 +433,7 @@
                     "subAbilityLevels": [     
                         {
                             "level": 0,
-                            "levelName": "No Recognition",
+                            "levelName": "No recognition",
                             "levelDescription": "The system does not need to detect or recognise elements in the environment in order to carry out its task."
                         },
                         {
@@ -478,7 +478,7 @@
                         },
                         {
                             "level": 9,
-                            "levelName": "Unknown element categorisation (Rigid)",
+                            "levelName": "Unknown element categorisation (rigid)",
                             "levelDescription": "The system is able to assess an unknown rigid element based on sense data and deduce properties that are relevant to the task."
                         },
                         {
@@ -572,7 +572,7 @@
                     "subAbilityLevels": [
                         {
                             "level": 0,
-                            "levelName": "No interpretive Ability",
+                            "levelName": "No interpretive ability",
                             "levelDescription": "The system does not need to interpret the environment or user interface actions."
                         },
                         {
@@ -659,7 +659,7 @@
                     "subAbilityLevels": [
                         {
                             "level": 0,
-                            "levelName": "No Acquired Knowledge",
+                            "levelName": "No acquired knowledge",
                             "levelDescription": "The system does not acquire knowledge during its operation. Required knowledge is embedded in the system."
                         },
                         {
@@ -740,7 +740,7 @@
                     "subAbilityLevels": [
                         {
                             "level": 0,
-                            "levelName": "No Reasoning",
+                            "levelName": "No reasoning",
                             "levelDescription": "The system does not carry out any form of reasoning but simply executes a pre-determined pattern of activity."
                         },
                         {
@@ -791,7 +791,7 @@
                     "subAbilityLevels": [
                         {        
 							"level": 0,
-                            "levelName": "No Cognitive Human Interaction",
+                            "levelName": "No cognitive human interaction",
                             "levelDescription": "Many systems will be able to operate successfully without cognitive interaction with the user."
                         },
                         {
@@ -826,7 +826,7 @@
                         },
                         {
                             "level": 7,
-                            "levelName": "Intuitive Interaction",
+                            "levelName": "Intuitive interaction",
                             "levelDescription": "The system is able to intuit the needs of a user with or without explicit command or dialogue. The user may communicate with the system without issuing explicit commands. The system will intuit from the current context and historical information the implied command."
                         }
                     ]
