@@ -846,7 +846,7 @@
                 {
                     "level": 1,
                     "levelName": "Passive recognition of the need of explainability",
-                    "levelDescription": "The system recognizes that the explanation of a particular behavioral aspect should be provided. Thus, it passively accumulates knowledge about the control/adaptation goals and the operating conditions, which could be used to increase explainability.  Defined variables of the semantic space shall be observable and measurable at runtime."
+                    "levelDescription": "The system recognizes that the explanation of a particular behavioral aspect should be provided. Thus, it passively accumulates knowledge about the control/adaptation goals and the operating conditions, which could be used to increase explainability. Defined variables of the semantic space shall be observable and measurable at runtime."
                 },
                 {
                     "level": 2,
@@ -863,7 +863,7 @@
                     "levelName": "Global aspect explainability",
                     "levelDescription": "The system explains the average behavior of a control/adaptation process with respect to the satisfaction of the control/adaptation goals under changing operating conditions."
                 },
-		{
+				{
                     "level": 5,
                     "levelName": "Collective explainability",
                     "levelDescription": "The process of explainability is carried out among multiple communicating control/adaptation agents in a decentralized manner."
