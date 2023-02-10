@@ -835,7 +835,7 @@
         }, 
 		{
             "abilityName": "Explainability",
-            "abilityDescription": "The explainability is the ability of the system to make the entire adaptation process transparent and comprehensible explicitly providing an explanation to humans for the relevant behavioral aspects of a control loop (i.e., why an adaptation is requested, the reasoning behind an adaptation decision, the effects/outcomes of the adaptation) in a given operating condition (i.e, the observable features of the semantic space), to meet the adaptation goals (e.g., satisfy the system-level requirements).",
+            "abilityDescription": "The explainability is the ability of the system to make the entire control/adaptation process transparent and comprehensible by explicitly providing an explanation to humans. This explanation should be provided for the relevant behavioral aspects of the system’s decision making (i.e., why a control task/adaptation is requested, the reasoning behind a control task/adaptation decision, the effects/outcomes of the control task/adaptation) in a given operating condition (i.e., the observable features of the semantic space – environment and configuration dimensions with their own type and domain) to meet the control/adaptation goals (e.g., satisfy the system-level requirements). These include the use of interpretable models (e.g., linear models or decision trees) and of model-agnostic interpretation tools for local or global explanations.",
             "hasSubAbilities": false,
             "abilityLevels": [
                 {
@@ -845,24 +845,29 @@
                 },
                 {
                     "level": 1,
-                    "levelName": "Recognition of the need of explainability",
-                    "levelDescription": "The system recognises that the explanation of a particular aspect should be provided. Thus, it accumulates knowledge about the adaptation goals and the operating conditions either passively or actively, by executing actions that are deliberately designed to increase explainability through exploration."
+                    "levelName": "Passive recognition of the need of explainability",
+                    "levelDescription": "The system recognizes that the explanation of a particular behavioral aspect should be provided. Thus, it passively accumulates knowledge about the control/adaptation goals and the operating conditions, which could be used to increase explainability.  Defined variables of the semantic space shall be observable and measurable at runtime."
                 },
                 {
                     "level": 2,
-                    "levelName": "Local aspect explainability",
-                    "levelDescription": "The system explains a selected behavioral aspect of a feedback control loop that occurs to satisfy the adaptation goals in a specific operating condition"
+                    "levelName": "Active recognition of the need of explainability",
+                    "levelDescription": "The system recognizes that the explanation of a particular behavioral aspect should be provided. Thus, it actively accumulates knowledge about the control/adaptation goals and the operating conditions by executing actions that are deliberately designed to increase explainability through exploration methods that extract and derive proper knowledge from the measured variables of the semantic space."
                 },
                 {
                     "level": 3,
-                    "levelName": "Global aspect explainability",
-                    "levelDescription": "The system explains the average behavior of a feedback control loop with respect to the satisfaction of the adaptation goals under changing operating conditions."
+                    "levelName": "Local aspect explainability",
+                    "levelDescription": "The system explains a selected behavioral aspect of a control/adaptation process that occurs to satisfy the control/adaptation goals in a specific operating condition."
                 },
                 {
                     "level": 4,
-                    "levelName": "Communicated explainaibility",
-                    "levelDescription": "The process of explainability is carried out among multiple communicating feedback loops in a decentralized manner."
-                }
+                    "levelName": "Global aspect explainability",
+                    "levelDescription": "The system explains the average behavior of a control/adaptation process with respect to the satisfaction of the control/adaptation goals under changing operating conditions."
+                },
+		{
+                    "level": 5,
+                    "levelName": "Collective explainability",
+                    "levelDescription": "The process of explainability is carried out among multiple communicating control/adaptation agents in a decentralized manner."
+                },
             ]
         }
     ]
