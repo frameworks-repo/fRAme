@@ -833,7 +833,7 @@
                 }
             ]
         }, 
-		{
+	{
             "abilityName": "Explainability",
             "abilityDescription": "The explainability is the ability of the system to make the entire control/adaptation process transparent and comprehensible by explicitly providing an explanation to humans. This explanation should be provided for the relevant behavioral aspects of the system’s decision making (i.e., why a control task/adaptation is requested, the reasoning behind a control task/adaptation decision, the effects/outcomes of the control task/adaptation) in a given operating condition (i.e., the observable features of the semantic space – environment and configuration dimensions with their own type and domain) to meet the control/adaptation goals (e.g., satisfy the system-level requirements). These include the use of interpretable models (e.g., linear models or decision trees) and of model-agnostic interpretation tools for local or global explanations.",
             "hasSubAbilities": false,
