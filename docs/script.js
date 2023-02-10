@@ -457,7 +457,7 @@ async function exportJson() {
 }
 
 async function getJSONAbilities() {
-    const response = await fetch("https://raw.githubusercontent.com/foselab/TRAILS/main/docs/abilities.json");
+    const response = await fetch("https://raw.githubusercontent.com/foselab/LENS/main/docs/abilities.json");
     const json = await response.json();
     return json.data;
 }
