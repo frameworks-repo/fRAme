@@ -296,7 +296,7 @@ async function draw() {
 async function exportPDFStandard() {
 	// Get data and iterate over them
     var data = await getJSONAbilities();
-    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> td, th {border: 1px solid black;} </style></head><body><h1>LENS<h1>";
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> td, th {border: 1px solid black;} </style></head><body><h1>LENS4PEMS<h1>";
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Ability with sub abilities 
@@ -352,7 +352,7 @@ async function pdf() {
 
     // Get data and iterate over them
     var data = await getJSONAbilities();
-    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> .tb {border: 1px solid black;} </style></head><body><h1>LENS<h1>";
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> .tb {border: 1px solid black;} </style></head><body><h1>LENS4PEMS<h1>";
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Ability with sub abilities 
@@ -457,7 +457,7 @@ async function exportJson() {
 }
 
 async function getJSONAbilities() {
-    const response = await fetch("https://raw.githubusercontent.com/foselab/LENS/main/docs/abilities.json");
+    const response = await fetch("https://raw.githubusercontent.com/foselab/LENS4PEMS/main/docs/abilities.json");
     const json = await response.json();
     return json.data;
 }
