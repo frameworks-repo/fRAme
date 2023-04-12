@@ -1,0 +1,1170 @@
+[
+  {
+    "abilityName": "Configurability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 0,
+    "achieved": "1",
+    "scenario": "The user cannot change language, units of measurement, and default values of ventilation parameters and alarms. \n\nThe user cannot change the plug and voltage because they are configured by the manufacturer."
+  },
+  {
+    "abilityName": "Configurability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "The user can change the ventilation mask, PEEP, and set the fraction of inspired oxygen using the gas blender before the start-up phase.\n\nThe user can change ventilation parameters and alarm thresholds before the task ventilation-on or ventilation-off starts.\n"
+  },
+  {
+    "abilityName": "Configurability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 2,
+    "achieved": "1",
+    "scenario": "PCV ventilation parameters can be changed when the user changes the operation mode from PSV to PCV.\n\nThe user can update alarm thresholds during ventilation-on."
+  },
+  {
+    "abilityName": "Configurability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 3,
+    "achieved": "1",
+    "scenario": "The ventilator changes ventilation mode from PSV to PCV in presence of apnea, which occurs when a patient does not take a new breath within the allowable apnea lag time.\n\nThe power supply changes from ADC to the backup battery."
+  },
+  {
+    "abilityName": "Configurability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 4,
+    "achieved": "2",
+    "scenario": "If a pressure sensor fails, the ventilator is capable of autoconfiguring."
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation trigger",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation trigger",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "MVM changes its ventilation mode in response to the patient's breath."
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation trigger",
+    "level": 2,
+    "achieved": "1",
+    "scenario": "MVM raises alarms in case of faulty parts (e.g., tube obstruction, high inspired volume, oxygen level too high) having different priorities (High, Medium, Low).\n"
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation trigger",
+    "level": 3,
+    "achieved": "2",
+    "scenario": "MVM can be extended with an alarm managing component responsible for aggregating all triggered alarms and prioritizing them using a Fault Tree Analysis(FTA) technique."
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation trigger",
+    "level": 4,
+    "achieved": "3",
+    "scenario": "By maintaining a history of the alarm system and the patient's state over time, MVM could be equipped with a predictive model to forecast severe situations, for example, when the patient is about to go into apnea status. \n\n  \n \n\n"
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation object",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation object",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "The triggering of an\napnea alarm results in the switching of the MVM from pressure supported ventilation (PSV) to pressure controlled ventilation (PCV) mode with\nparameters set by the user.\n\n"
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation object",
+    "level": 2,
+    "achieved": "2",
+    "scenario": "In ASV (Adaptive Support Ventilation) mode the MVM alters pressure and respiratory\nrate to guarantee the computed target volume leading to the minimum WOB (WorK Of Breath).\n"
+  },
+  {
+    "abilityName": "Adaptability",
+    "hasSubAbilities": true,
+    "subAbilityName": "Adaptation object",
+    "level": 3,
+    "achieved": "3",
+    "scenario": "Although MVM is a single-agent device, ventilation parameters could be automatically computed on the base of a stochastic model of the patient, executed by a different agent.\n\nThe adaptation is executed by the MVM agent."
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "The MVM is set in fail-safe mode (ventilation is interrupted, input valve is closed and output valve is open) if a severe condition is detected (e.g., the pressure measured in the entrance to the patient's airway is above the threshold PAW max, or the obstruction alarm condition occurs)."
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 2,
+    "achieved": "2",
+    "scenario": "The ventilator resumes ventilation using the last set of configuration parameters when an alarm that brings out MVM in fail-safe mode is resolved."
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 3,
+    "achieved": "2",
+    "scenario": "If MVM is using the backup battery, especially when the level of the battery is low, MVM saves energy gracefully by shutting down some functions (e.g., by reducing display brightness, reducing the monitoring frequency of some sensors, etc.)."
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 4,
+    "achieved": "2",
+    "scenario": "During the ventilation, the system can constantly measure leaks (e.g., at the level of the patient's maskor of the breathing circuit) and compensate them to avoid future errors/alarms."
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 5,
+    "achieved": "3",
+    "scenario": "The MVM may be endowed with a remote control dashboard so operators can monitor failure conditions instantaneously and actuate real-time adjustments to the ventilation process. For example, a low level of oxygen concentration is revealed through the dashboard, so the operator decreases the value of inspiratory pressure."
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 6,
+    "achieved": "3",
+    "scenario": "By registering the system's failures and the related patient's state over time, specific situations could be predicted, for example, that he or she is about to go apnea. So the MVM or its remote control dashboard can be equipped with a predictive model to forecast severe situations. "
+  },
+  {
+    "abilityName": "Dependability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 7,
+    "achieved": "3",
+    "scenario": "By registering the system's failures and the related patient's state over time, specific situations could be predicted, for example, that he or she is about to go apnea. So the MVM or its remote control dashboard can exploit predictive models to forecast severe situations and prescribes adjustment plans proactively."
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 1,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 2,
+    "achieved": "1",
+    "scenario": "MVM continuously monitors the patient's breath to decide the pressure to be applied by the input valve and the status of the output valve."
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 3,
+    "achieved": "1",
+    "scenario": "MVM continuously monitors the patient's breath to decide to change ventilation mode and set backup parameters when it changes from PSV to PCV in case of apnea."
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 4,
+    "achieved": "2",
+    "scenario": "MVM implements an Adaptive Support Ventilation (ASV) mode, already used by several ventilators. In ASV mode, MVM estimates the resistance and compliance of the patient by using a mathematical model of him and decides at every breathe the inspiratory pressure and the respiratory rate following the Otis curve."
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 5,
+    "achieved": "3",
+    "scenario": "When ventilating a patient, to provide the necessary oxygen (higher-level task), the MVM uses the oxygen from the air line of the hospital but it can be supplied by an oxygen concentrator too. When an external unpredictable event reduces the oxygen concentration of the main line, MVM uses the oxygen concentrator to continue ventilation."
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 6,
+    "achieved": "3",
+    "scenario": "As above, but in this case, MVM takes into account also the maximum quantity of oxygen the concentrator can provide before switching to it."
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 7,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 8,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 9,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Autonomy",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 10,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 1,
+    "achieved": "0",
+    "scenario": "MVM is endowed with a GUI for the human control (no direct control)."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 2,
+    "achieved": "1",
+    "scenario": "The physician controls the ventilation through the GUI. E.g., he or she can start the ventilation and set ventilation parameters."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 3,
+    "achieved": "1",
+    "scenario": "MVM can execute several tasks in order (from self-test to ventilation)."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 4,
+    "achieved": "1",
+    "scenario": "During ventilation (both in PCV and PSV) the MVM can operate autonomously, but the physician can intervene to change the ventilation mode."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 5,
+    "achieved": "1",
+    "scenario": "When MVM restarts and it has been shut down for less than 15 minutes, it autonomously decides if a self-test is necessary or not. When performing a self-test, the operator selects the next sub-task to test the MVM components (e.g., spirometer calibration and leak check), then MVM performs each sub-task autonomously."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 6,
+    "achieved": "1",
+    "scenario": "During ventilation (both in PCV and PSV) the MVM can operate autonomously. If a connection error (obstruction or disconnection of the tube) is detected, MVM requires the user to resolve the error and restart the ventilation."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 7,
+    "achieved": "1",
+    "scenario": "Once the user has selected ventilation mode, MVM can autonomously ventilate the patient."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction",
+    "level": 8,
+    "achieved": "2",
+    "scenario": "Once the patient is connected to the ventilator, it decides the ventilation mode depending on the patient's profile."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction feedback",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction feedback",
+    "level": 1,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction feedback",
+    "level": 2,
+    "achieved": "1",
+    "scenario": "MVM gives visual and acoustic feedback to the operator through the GUI and LEDs."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction feedback",
+    "level": 3,
+    "achieved": "2",
+    "scenario": "The MVM GUI can be empowered with haptic feedback. Specific haptic patterns can be introduced to complement the visual communication when unusual/unsafe configuration parameters are set."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction feedback",
+    "level": 4,
+    "achieved": "3",
+    "scenario": "The MVM may be endowed with a remote control dashboard or WEB-app, so operators can monitor and control the ventilation remotely."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "System to system interaction",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "System to system interaction",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "MVM is connected with the IT system of the hospital (the MVM sends alarms to the centralsystem of the hospital)."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "System to system interaction",
+    "level": 2,
+    "achieved": "3",
+    "scenario": "Two or more MVMs can share oxygen equipment and synchronize with each other to optimize oxygen consumption and avoid wasting it."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "System to system interaction",
+    "level": 3,
+    "achieved": "3",
+    "scenario": "In critical situations, the IT system of the hospital can ask the ventilator to optimize its resources (e.g., oxygen and energy). Moreover, MVM can transfer ventilation information to the cloud to persist sense-data knowledge."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "System to system interaction",
+    "level": 4,
+    "achieved": "3",
+    "scenario": "MVM can communicate with other devices to administer therapy (e.g., it can require the use of the infusion pump), or it can use data from other devices to update ventilation parameters (e.g.,  it can use data from an oximeter)."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "System to system interaction",
+    "level": 5,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "System to system interaction",
+    "level": 6,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction safety",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction safety",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "MVM has an emergency red button, if it is pushed by the operator it stops the ventilation and sets the ventilator into safe mode (input valve closed and output valve open)."
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction safety",
+    "level": 2,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction safety",
+    "level": 3,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction safety",
+    "level": 4,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Interaction",
+    "hasSubAbilities": true,
+    "subAbilityName": "Human-system interaction safety",
+    "level": 5,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "MVM has sensors to measure pressure, temperature, flux, oxygen concentration, etc. Based on the values provided by the sensors, MVM alters its behavior, e.g., if the temperature is out of range the corresponding alarm is raised."
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 2,
+    "achieved": "2",
+    "scenario": "A barcode reader can be used to scan the patient medical record to extract some information for the ventilation (e.g., weight and height). \n\nAdditionally, the operator can have a badge with a QR code that allows the MVM to identify him/her as a doctor or simple operator, and consequently, the system can show a complete or simplified command interface."
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 3,
+    "achieved": "2",
+    "scenario": "Currently, MVM sets the parameters of the input valve control according to a model of the patient's lung (resistance and capacity) during the first 3 breaths. This is done at the startup or on-demand through two sensors that measure the volume of inhaled/exhaled air. Additionally, MVM could integrate information coming from multiple sensors (both of the machine and attached to the patient) to build and update a breathing model of the patient (for instance, resistance and compliance). \nThe periodically updated model of the patient can be used to drive the ventilation policies adopted by the ventilator."
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 4,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 5,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 6,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 7,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "General perception",
+    "level": 8,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 0,
+    "achieved": "1",
+    "scenario": "MVM has no recognition ability."
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 1,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 2,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 3,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 4,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 5,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 6,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 7,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 8,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 9,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 10,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 11,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 12,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 13,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Perception",
+    "hasSubAbilities": true,
+    "subAbilityName": "Element recognition",
+    "level": 14,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 0,
+    "achieved": "1",
+    "scenario": "Predefined actions are executed in self-test mode, which can be interrupted by the operator."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "The MVM continuously monitors the patient's breathing and decides to change modes (ventilation algorithms) and set the backup parameters in the transition from PSV to PCV in case of apnea. \nThe MVM is also able to continuously monitor the patient's breathing and decides the inlet valve pressure and outlet valve status."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 2,
+    "achieved": "2",
+    "scenario": "By introducing the additional ASV ventilation algorithm, a threshold-based parametric adaptation decision is realized by the MVM: when the ventilator is operating in PCV mode, based on the monitoring of patient parameters (respiratory rate and target volume) and the relative distance from the Otis curve, the MVM switches to ASV mode to ensure minimum breathing effort (WOB: work of breathing)."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 3,
+    "achieved": "2",
+    "scenario": "MVM extended with the ASV mode can calculate the optimal breathing pattern that involves the minimum WOB for the patient (it optimizes the inspiratory pressure and the respiratory rate to reach atarget value)."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 4,
+    "achieved": "3",
+    "scenario": "The MVM embeds a knowledge base where all the information (e.g., patient state, ventilation failures, etc.) is stored. These historical data are used for data analytics, user profiling, and improving the system's dependability."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 5,
+    "achieved": "3",
+    "scenario": "MVM is extended with descriptive analytics: it can plan ventilation strategies according to the accumulated knowledge."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 6,
+    "achieved": "3",
+    "scenario": "MVM is extended with predictive analytics: it can dynamically change the ventilation plan in response to its level of success. For example, in ASV mode, the MVM may monitor the overall life cycle of the ventilation process in terms of a specific flow of activities, and predict how and which parameters to modify to calibrate the ventilator according to the current values of the patient's parameters; in this case, the MVM assists the doctor in the clinical use of the ventilator in ASV mode."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 7,
+    "achieved": "3",
+    "scenario": "MVM is extended with prescriptive analytics based on a predictive model of the patient (e.g., a stochastic runtime model of the patient). The MVM can provide prescription actions to calibrate the ASV ventilation based on the comparison between the patient's real monitored data and the data prescribed by the patient model."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Action",
+    "level": 8,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "The MVM measures the inspiratory pressure of the patient, the environmental temperature, the respiratory rate, etc, to collect sensor data to be used to interpret the patient's health parametersand condition."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 2,
+    "achieved": "1",
+    "scenario": "The MVM estimates the flow starting from the measure of two pressures according to the Venturi effect."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 3,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 4,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 5,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 6,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 7,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 8,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Intepretive",
+    "level": 9,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Envisioning",
+    "level": 0,
+    "achieved": "1",
+    "scenario": "MVM has no envisioning ability."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Envisioning",
+    "level": 1,
+    "achieved": "2",
+    "scenario": "MVM can modulate the alarm loudness depending on the noise of the local room to guarantee the actual effectiveness of the alarm sound."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Envisioning",
+    "level": 2,
+    "achieved": "2",
+    "scenario": "MVM can observe the patient's condition and predict the effect on its functioning; e.g., if the MVM observes that the patient needs a consistent amount of assistance (in terms of oxygen), it can predict that the request for oxygen to the hospital system will increase and, thus, may consequently require a better organization of the stock of oxygen."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Envisioning",
+    "level": 3,
+    "achieved": "2",
+    "scenario": "During the ventilation, the system can constantly measure leaks (e.g., at the level of the patient's maskor of the breathing circuit) and compensate them to avoid future errors/alarms."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Envisioning",
+    "level": 4,
+    "achieved": "3",
+    "scenario": "MVM can envision, for example, an increase in the patient's sweating in response to the increase of the surrounding environment's temperature, and use such information to better guide ventilation based on a model of the patient (that includes in addition to the breathing parameters - resistance and compliance -also other vital parameters, like the temperature itself, and their relationships)."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "The MVM can sense several patients' vital signs (e.g., inspiratory pressure, respiratory rate, etc.)."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 2,
+    "achieved": "2",
+    "scenario": "The MVM may record in ASV mode the tidal volume of the last 8 respiratory cycles, to compute their average value, compare it with the target volume and decide the new respiratory rate and inspiratory pressure to be used in the next cycle."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 3,
+    "achieved": "2",
+    "scenario": "MVM can autonomously execute an expiratory pause maneuver to gather some extra information about the patient."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 4,
+    "achieved": "2",
+    "scenario": "MVM can recognize the severity or not of the patient's clinical conditions according to a given category of a pre-established clinical classification."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 5,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 6,
+    "achieved": "2",
+    "scenario": "MVM does not know the weight and height of the patient and can ask the user to insert these data."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 7,
+    "achieved": "2",
+    "scenario": "MVM can download from an external DB the patient's record with all necessary data for the initialconfiguration of the ventilation."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 8,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 9,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 10,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 11,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 12,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 13,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Acquired knowledge",
+    "level": 14,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "MVM controls the input valve to reach the desired inspiratory pressure."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 2,
+    "achieved": "1",
+    "scenario": "MVM monitors the drop of pressure to trigger the inspiration phase."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 3,
+    "achieved": "1",
+    "scenario": "MVM in PCV monitors the inspiratory flow and when it falls below a threshold, it starts the expiratory phase."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 4,
+    "achieved": "1",
+    "scenario": "MVM lets the inspiratory phase end in PCV, when it observes a rapid increase of the pressure, even if the inspiratory time is not expired yet (possible coughing)."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 5,
+    "achieved": "2",
+    "scenario": "In the ASV ventilation mode, the MVM continuously decides the necessary respiratory rate and inspiratory pressure to be used for achieving a target tidal volume."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 6,
+    "achieved": "2",
+    "scenario": "In the ASV ventilation mode, the MVM continuously checks that the tidal volume does not exceed a maximum limit and does not drop below a minimum threshold."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 7,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Reasoning",
+    "level": 8,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 0,
+    "achieved": "0",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 1,
+    "achieved": "1",
+    "scenario": "The physician interacts with MVM by using its GUI, which allows giving commands (e.g., the ventilation mode to be used, the values of the ventilation parameters, etc.) and shows the measured health parameters."
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 2,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 3,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 4,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 5,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 6,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Cognitive",
+    "hasSubAbilities": true,
+    "subAbilityName": "Cognitive human interaction",
+    "level": 7,
+    "achieved": "4",
+    "scenario": ""
+  },
+  {
+    "abilityName": "Explainability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 0,
+    "achieved": "1",
+    "scenario": "MVM has no explainer component."
+  },
+  {
+    "abilityName": "Explainability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 1,
+    "achieved": "2",
+    "scenario": "MVM could be endowed with a component for data and events continuous recording."
+  },
+  {
+    "abilityName": "Explainability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 2,
+    "achieved": "3",
+    "scenario": "MVM could be endowed with a component for data and events continuous recording and machansms for exploring and deriving knowledge from collected data. "
+  },
+  {
+    "abilityName": "Explainability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 3,
+    "achieved": "3",
+    "scenario": "In addition, MVM could be endowed with an explainer mechanism that analyses control/adaptation requests  to provide explanation of local control/adaptation aspects."
+  },
+  {
+    "abilityName": "Explainability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 4,
+    "achieved": "3",
+    "scenario": "In addition, MVM could be endowed with an explainer mechanism that analyses the outcome (i.e., either success or failure) for all control/adaptation decisions  as a whole to provide explanation of  global control/adaptation aspects."
+  },
+  {
+    "abilityName": "Explainability",
+    "hasSubAbilities": false,
+    "subAbilityName": "",
+    "level": 5,
+    "achieved": "0",
+    "scenario": ""
+  }
+]
