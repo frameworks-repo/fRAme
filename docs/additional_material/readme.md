@@ -20,7 +20,7 @@ We organized the validation of the LENS<sub>PEMS</sub> framework into the follow
 > ### **RQ1 (Applicability):** How LENS<sub>PEMS</sub> is applicable to real PEMS?
 > To validate the applicability of LENS<sub>PEMS</sub>, we show, in the article, its use in practice to evaluate a real PEMS, namely a mechanical ventilator (MVM), which has been developed during the COVID-19 pandemic also by most of the authors of this work [1].
 > * The LENS<sub>PEMS</sub> framework can be found [here](https://foselab.github.io/LENS4PEMS/).
-> * For convenience, we also report the [evaluation of the MVM case study](https://github.com/Martins83/LENS/blob/main/LENS_MVM_REPORT.pdf), as generated from the framework.
+> * For convenience, we also report the [evaluation of the MVM case study](../../files/LENS_MVM_REPORT.pdf), as generated from the framework.
 >   
 
 > ### **RQ2 (Generalizability):** To what extent LENS<sub>PEMS</sub> is generalizable to the PEMS class of systems?
