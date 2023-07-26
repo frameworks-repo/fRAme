@@ -37,19 +37,19 @@ We organized the validation of the LENS<sub>PEMS</sub> framework into the follow
 > Through their evaluation, we determined the necessary modifications for each of the examined PEMS. Once we confirmed that each modification was suitable for all the PEMS, we extended LENS<sub>PEMS</sub> accordingly.
 > In the following document, all change proposals, with their motivations and final status have been tracked.
  >
- > * [LENS CHANGES](https://github.com/Martins83/LENS/blob/main/LENS_Changes.docx) 
+ > * [LENS CHANGES](https://github.com/foselab/LENS4PEMS/raw/main/docs/additional_material/LENS_Changes.docx) 
 
 
 
 > ### **RQ3 (Usefulness):** How LENS<sub>PEMS</sub> is useful in making an assessment of a PEMS and identifying possible directions of improvement towards smartness?
 > To answer to this question we followed a mixed research methodology, including answers to a questionnaire and interviews.
-> * The questionnaire is available [here](https://github.com/Martins83/LENS/blob/main/LENS4PEMS%20-%20Google%20Forms.pdf)
+> * The questionnaire is available [here](https://github.com/foselab/LENS4PEMS/raw/main/docs/additional_material/LENS4PEMS%20-%20Google%20Forms.pdf)
 > * The anonymous responses to the questionnaire are available [here]() - TO BE ADDED
 > * The transcription of interviews are available [here]() - TO BE ADDED
 
 
 ## **Replication package** 
-The replication package for the literature review of the paper submitted to IEEE TSE is available [here](https://github.com/Martins83/LENS/blob/main/Literature_Review_Replication_Package.zip). 
+The replication package for the literature review of the paper submitted to IEEE TSE is available [here](https://github.com/foselab/LENS4PEMS/raw/main/docs/additional_material/Literature_Review_Replication_Package.zip). 
 
 ## **Contributors**
 * **Andrea Bombarda**, University of Bergamo (Italy)
