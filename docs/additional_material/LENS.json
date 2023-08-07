@@ -1,0 +1,245 @@
+{
+    "data": [
+        {
+            "abilityName": "Configurability",
+            "abilityDescription": "",
+            "hasSubAbilities": false,
+            "abilityLevels": [
+                {
+                    "level": 0,
+                    "levelName": "",
+                    "levelDescription": ""
+                }
+            ]
+        },
+        {
+            "abilityName": "Adaptability",
+            "abilityDescription": "",
+            "hasSubAbilities": true,
+            "subAbilities": [
+                {
+                    "subAbilityName": "Adaptation trigger",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+				{
+                    "subAbilityName": "Adaptation object",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                }
+			]
+        },
+        {
+            "abilityName": "Dependability",
+            "abilityDescription": "",
+            "hasSubAbilities": false,
+            "abilityLevels": [
+                {
+                    "level": 0,
+                    "levelName": "",
+                    "levelDescription": ""
+                }
+            ]
+        },
+        {
+            "abilityName": "Autonomy",
+            "abilityDescription": "",
+            "hasSubAbilities": false,
+            "abilityLevels": [
+                {
+                    "level": 0,
+                    "levelName": "",
+                    "levelDescription": ""
+                }
+            ]
+        },
+        {
+            "abilityName": "Interaction",
+            "abilityDescription": "",
+            "hasSubAbilities": true,
+            "subAbilities": [
+                {
+                    "subAbilityName": "Human-system interaction",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+				{
+                    "subAbilityName": "Human-system interaction feedback",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "System to system interaction",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },			
+				{
+                    "subAbilityName": "Human-system interaction safety",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "abilityName": "Perception",
+            "abilityDescription": "",
+            "hasSubAbilities": true,
+            "subAbilities": [
+				{
+                    "subAbilityName": "General perception",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                }, 
+				{
+                    "subAbilityName": "Element recognition",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [     
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Scene perception",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [     
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "abilityName": "Cognitive",
+            "abilityDescription": "",
+            "hasSubAbilities": true,
+            "subAbilities": [
+                {
+                    "subAbilityName": "Action",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Intepretive",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+				{
+                    "subAbilityName": "Envisioning",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },		
+				{
+                    "subAbilityName": "Acquired knowledge",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+				{
+                    "subAbilityName": "Reasoning",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {
+                            "level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                },
+                {
+                    "subAbilityName": "Cognitive human interaction",
+                    "subAbilityDescription": "",
+                    "subAbilityLevels": [
+                        {        
+							"level": 0,
+                            "levelName": "",
+                            "levelDescription": ""
+                        }
+                    ]
+                }
+            ]
+        }, 
+	    {
+            "abilityName": "Explainability",
+            "abilityDescription": "",
+            "hasSubAbilities": false,
+            "abilityLevels": [
+                {
+                    "level": 0,
+                    "levelName": "",
+                    "levelDescription": ""
+                }
+            ]
+        }
+    ]
+}
