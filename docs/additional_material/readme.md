@@ -50,7 +50,7 @@ We organized the validation of the LENS<sub>PEMS</sub> framework into the follow
 ## **LENS_ZOO** 
 In the following, we list all available LENS instances. This list will be updated whenever new instances of our framework are developed.
 * *LENS*, a generic meta-model to be customized for a specific class of systems ([source](https://github.com/foselab/LENS4PEMS/raw/main/docs/additional_material/LENS.json))
-* *LENS<sub>PEMS</sub>*, customized for Programmable Electronic Medical Systems ([source](https://github.com/foselab/LENS4PEMS/raw/main/docs/abilities.json))
+* *LENS<sub>PEMS</sub>*, a customization for Programmable Electronic Medical Systems ([source](https://github.com/foselab/LENS4PEMS/raw/main/docs/abilities.json))
   
 ## **Replication package** 
 The replication package for the literature review of the paper submitted to IEEE TSE is available [here](https://github.com/foselab/LENS4PEMS/raw/main/docs/additional_material/Literature_Review_Replication_Package.zip). 
