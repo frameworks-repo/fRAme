@@ -1,7 +1,8 @@
 //options to be added
-var options = ["Not applicable","Satisfied","Improvable (low effort)","Improvable (high effort)", "Unable"];
-var colors = ['#FFFFFF', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
-
+//var options = ["Not applicable","Satisfied","Improvable (low effort)","Improvable (high effort)", "Unable"];
+//var colors = ['#FFFFFF', '#00FF00', '#FFFF5A' ,'#FFA500' ,'#808080'];
+var options = ["Not applicable","Has the ability","Does not have the ability"];
+var colors = ['#CCCCCC', '#FFFFFF', '#000000']; //gray: does not apply; white: has the ability; black: does not have the ability
 
 function openAbility(evt, cityName) {
     // Declare all variables
@@ -104,9 +105,9 @@ function fillSubAbility(ability) {
         let heading_1 = document.createElement('th');
         heading_1.innerHTML = "Level";
         let heading_2 = document.createElement('th');
-        heading_2.innerHTML = "Achieved?";
+        heading_2.innerHTML = "Response";
         let heading_3 = document.createElement('th');
-        heading_3.innerHTML = "Scenario";
+        heading_3.innerHTML = "Example";
         row_1.appendChild(heading_1);
         row_1.appendChild(heading_2);
         row_1.appendChild(heading_3);
@@ -141,9 +142,9 @@ function fillNormalAbility(ability) {
     let heading_1 = document.createElement('th');
     heading_1.innerHTML = "Level";
     let heading_2 = document.createElement('th');
-    heading_2.innerHTML = "Achieved?";
+    heading_2.innerHTML = "Response";
     let heading_3 = document.createElement('th');
-    heading_3.innerHTML = "Scenario";
+    heading_3.innerHTML = "Example";
     row_1.appendChild(heading_1);
     row_1.appendChild(heading_2);
     row_1.appendChild(heading_3);
@@ -296,7 +297,7 @@ async function draw() {
 async function exportPDFStandard() {
 	// Get data and iterate over them
     var data = await getJSONAbilities();
-    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> td, th {border: 1px solid black;} </style></head><body><h1>LENS4PEMS<h1>";
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> td, th {border: 1px solid black;} </style></head><body><h1>fRAme<h1>";
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Ability with sub abilities 
@@ -352,7 +353,7 @@ async function pdf() {
 
     // Get data and iterate over them
     var data = await getJSONAbilities();
-    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> .tb {border: 1px solid black;} </style></head><body><h1>LENS4PEMS<h1>";
+    var html = "<html><head><meta charset='UTF-8'><link rel='stylesheet' href='style.css'><style> .tb {border: 1px solid black;} </style></head><body><h1>fRAme<h1>";
     for (let i=0; i<data.length; i++) {
         if (data[i].hasSubAbilities) {
             // Ability with sub abilities 
@@ -365,7 +366,7 @@ async function pdf() {
                 html += "<p>" + data[i].subAbilities[j].subAbilityDescription + "</p><br>";
 
                 // Levels
-                html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th class='tb'>Level</th><th class='tb'>Achieved?</th><th class='tb'>Scenario</th></tr>"
+                html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th class='tb'>Level</th><th class='tb'>Response</th><th class='tb'>Example</th></tr>"
 
                 for (let index = 0; index < data[i].subAbilities[j].subAbilityLevels.length; ++index) {
                     const element = data[i].subAbilities[j].subAbilityLevels[index];        
@@ -385,7 +386,7 @@ async function pdf() {
             html += "<p>" + data[i].abilityDescription + "</p><br>";
 
             // Levels
-            html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th class='tb'>Level</th><th class='tb'>Achieved?</th><th class='tb'>Scenario</th></tr>"
+            html += "<table style='border: 1px solid black; border-collapse: collapse;'> <tr><th class='tb'>Level</th><th class='tb'>Response</th><th class='tb'>Example</th></tr>"
 
             for (let index = 0; index < data[i].abilityLevels.length; ++index) {
                 const element = data[i].abilityLevels[index];        
@@ -450,14 +451,14 @@ async function exportJson() {
 	a.href = URL.createObjectURL(new Blob([JSON.stringify(abilitiesValues, null, 2)], {
 		type: "text/plain"
 	}));
-	a.setAttribute("download", "LENS.json");
+	a.setAttribute("download", "fRAme.json");
 	document.body.appendChild(a);
 	a.click();
 	document.body.removeChild(a);
 }
 
 async function getJSONAbilities() {
-    const response = await fetch("https://raw.githubusercontent.com/foselab/LENS4PEMS/main/docs/abilities.json");
+    const response = await fetch("https://raw.githubusercontent.com/Martins83/AR/refs/heads/main/docs/abilities.json");
     const json = await response.json();
     return json.data;
 }
