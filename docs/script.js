@@ -458,7 +458,7 @@ async function exportJson() {
 }
 
 async function getJSONAbilities() {
-    const response = await fetch("https://raw.githubusercontent.com/Martins83/AR/refs/heads/main/docs/abilities.json");
+    const response = await fetch("https://raw.githubusercontent.com/frameworks-repo/fRAme/refs/heads/main/docs/abilities.json");
     const json = await response.json();
     return json.data;
 }
